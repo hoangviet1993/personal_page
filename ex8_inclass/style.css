@@ -1,0 +1,68 @@
+/*
+	Name:Viet Tran Quoc Hoang
+	Email: vtran1@cs.uml.edu
+	Inclass excercize 8
+	Time spent:5 hours
+*/
+body 
+{
+	font-size: 80%;
+	font-family: "Courier New", Courier, monospace;
+	letter-spacing: 0.15em;	
+	background-color: white;
+	/* provided by prof. Wenjin*/
+}
+
+#page 
+{
+	margin: auto;
+	padding: 20px;/*provided*/
+	border: 4px double black;
+	background-color: white;
+	max-width: 940px;/*provided*/
+	min-width: 720px;/*provided*/
+}
+
+#logo 
+{
+	width: 150px;
+	margin: 25px auto 25px auto;
+}
+
+ul 
+{
+	margin: auto;
+	border-top: 2px solid black;/*provided,need solid*/
+	border-bottom: 2px solid black;/*provided,need solid*/
+	padding: 15px;/*provided*/
+	width: 570px;/*provided*/
+	text-align: center;
+}
+
+li 
+{
+	display: inline;
+	margin: 3px;
+}
+
+p
+{
+	width: 600px; /*provided*/
+	margin: 30px auto 30px auto; 
+	text-align: center;
+}
+
+a
+{
+	color: black;
+	text-decoration: none;
+	text-transform: uppercase;/*provided*/
+	padding: 6px 18px 5px 18px;/*provided*/
+}
+
+a:hover, a.on 
+{
+	color: red;/*provided*/
+	background-color: white;/*provided*/
+}
+		

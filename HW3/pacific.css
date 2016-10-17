@@ -1,0 +1,100 @@
+/*
+Name: Viet Tran Quoc Hoang
+Assignment 3
+Date : 9/22/2016
+Time spent: 16-20 hours
+*/
+body {
+	background-color: #00569f;
+	background-image: url("ptrbackground.jpg");
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+	background-color:#000032;
+	color: #FFFFFF;
+	background-image: url("sunset.jpg");
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+nav{
+	float:left;
+	width:160px;
+}
+nav ul {
+	font-size: 1.2em;
+	list-style: none;
+	font-weight: bold;
+	text-align: left;
+	padding: 10px 15px 20px 10px;
+}
+
+nav a:visited {
+	color: #344873;
+}
+nav a{
+	text-decoration: none;
+	color: #0F0169
+	
+}
+nav a:hover {
+	color: #FFFFFF;
+}
+
+h1 {
+	margin-bottom: 0;
+	padding: 10px;
+}
+h2 {
+	color: #3399CC;
+}
+h1,
+h2 {
+	font-family: Georgia, "Times New Roman", serif;
+}
+
+#wrapper{
+	background-color:#90c7e3;
+	width: 70%;
+	min-width:600px;
+	margin:auto;
+}
+#content{
+	background-color:#FFFFFF;
+	margin-left: 190px;
+	padding: 5px 20px 5px 30px;
+}
+#content img{
+	float:left;
+	padding-right: 20px;
+	max-width: 100%;
+}
+.resort{
+	color:#1663A7;
+	font-weight: bold;
+}
+
+
+#content ul{
+	list-style-image:url("marker.gif");
+	list-style-position: inside;
+}
+
+dt {
+	color: #000033;
+}
+footer {
+	background-color:#FFFFFF;
+	font-family: Georgia, "Times New Roman", serif;
+	font-style:italic;
+	font-size :70%;
+	margin-left: 190px;
+	padding: 5px 20px 5px 30px;
+}
+
+
+
+
+
