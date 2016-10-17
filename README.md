@@ -1,2 +1,4 @@
 # personal_page
-My personal webpage
+UMass Lowell
+GUI Programming I
+Assignment 5: Setting up Github page
