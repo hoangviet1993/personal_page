@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- 
+    Name: Viet Tran Quoc Hoang
+    Email : vtran1@cs.uml.edu
+    Assignment: HW6 - Dynamic Mult Table
+    File Description: index.html file for hw6
+-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dynamic Multiplication Table</title>
+    <link href="style/main.css" rel="stylesheet">
+    <!-- scripts-->
+    <script language="JavaScript" src="js/hw6.js"></script>
+</head>
+
+<body class="landing_page">
+    <div id="page-wrapper">
+        <h1 class="title">HW6: Dynamic Multiplication Table</h1>
+        <hr>
+        <!-- brief description-->
+        <p> A simple JS WebApp that can dynamically draw a multiplication table given the length and width.</p>
+        <p>Please enter integers between -10 and 10.</p>
+        <form id="range_input" onsubmit="return false;">
+            <!-- input form-->
+            <ul>
+                <!-- using ul to keep things ordered-->
+                <li>
+                    Length:
+                    <br>
+                    <!-- all four input boxes only allowed number type, has  a range and integer  only restriction as well-->
+                    <input type="number" min="-10" max="10" id="row_start" pattern="[0-9]" autofocus required placeholder="Starting value">
+                    <label for="row_start" id="min_length_error_message"> </label>
+                    <!-- error messages-->
+                </li>
+                <li>
+                    <input type="number" min="-10" max="10" id="row_end" pattern="[0-9]" required placeholder="Ending value">
+                    <label for="row_end" id="max_length_error_message"> </label>
+                </li>
+                </li>
+                <li> Width:<br>
+                    <input type="number" min="-10" max="10" id="col_start" pattern="[0-9]" required placeholder="Starting value">
+                    <label for="col_start" id="min_width_error_message"> </label>
+                </li>
+                <li>
+                    <input type="number" min="-10" max="10" id="col_end" pattern="[0-9]" required placeholder="Ending value">
+                    <label for="col_end" id="max_width_error_message"> </label>
+                </li>
+            </ul>
+            <input type="submit" min="-10" max="10" id="submit_button" onclick="validate_form()" value="Submit">
+            <!-- submit buttons-->
+        </form>
+        <hr>
+        <p id="tableout"></p>
+    </div>
+    <footer>
+        <br>Copyright 2016 by Viet Tran. WIP,Updated Oct 2016. This page is valid <a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fweblab.cs.uml.edu%2F~vtran1%2F" target="_blank"><i class="fa fa-html5"></i>HTML5</a> and <a href="http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fweblab.cs.uml.edu%2F~vtran1%2Fcss%2Fmain.css&profile=css3&usermedium=all&warning=1&vextwarning=&lang=en"
+            target="_blank"><i class="fa fa-css3"></i>CSS3</a> as per W3C.
+
+    </footer>
+</body>
+
+</html>
