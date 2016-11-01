@@ -1,7 +1,13 @@
 /*
 Name: Viet Tran Quoc Hoang
-Email : vtran1@cs.uml.edu
-File Description: JS file for HW 6
+Contact : vtran1@cs.uml.edu
+Assignment: HW6 - Dynamic Mult Table
+GUI Programming I - UMass Lowell
+For this assignment, I am supposed to create a multiplication table dynamically given user input 
+for width and length.
+Copyright [2016] by Viet Tran. All rights reserved. 
+May be freely copied or excerpted for educational purposes with credit to the author.
+File Description: hw6.js file for hw6
 These functions are necessary to draw a table given the width and length.Primitive validity
 checking are done (integer and range check)
 */
@@ -94,11 +100,11 @@ function isInt(n) {
 function generateTable(row_start, row_finish, col_start, col_finish) {
     var table = '<table>';
     //table variable to display
-    col_header_value = col_start, //storing data for header value
-        row_header_value = row_start;
+    var col_header_value = col_start; //storing data for header value
+    var row_header_value = row_start;
 
     for (var i = col_start; i <= col_finish + 1; i++) {
-        table += '<tr>' //opening up one row of table
+        table += '<tr>'; //opening up one row of table
         for (var j = row_start; j <= row_finish + 1; j++) {
             if (i == col_start && j == row_start) {
                 //corner element is empty
@@ -112,7 +118,7 @@ function generateTable(row_start, row_finish, col_start, col_finish) {
             } else {
                 // console.log("i ="+ i+"  j ="+j+"\n");
                 // contents of the rest of the table
-                //as name suggests, both i j is even
+                //as name suggests, both i j is even or odd
                 if (i % 2 === 0 && j % 2 === 0 || (i % 2 !== 0 && j % 2 !== 0)) {
                     table += "<td class = 'both_even_or_odd'>" + ((i - 1) * (j - 1)) + '</td>';
                 } else {
@@ -125,5 +131,5 @@ function generateTable(row_start, row_finish, col_start, col_finish) {
     }
     table += '</table>'; // close out table tag
     // console.log(table);
-    load_content_into_element('tableout', table); //push table content
+    load_content_into_element('tableout', table); //push table content into element
 }

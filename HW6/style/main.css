@@ -1,8 +1,13 @@
 /*
-Name: Viet Tran Quoc Hoang
-Email : vtran1@cs.uml.edu
-File Description: CSS file for HW 6
-CSS settings for HW6 webpage
+    Name: Viet Tran Quoc Hoang
+    Contact : vtran1@cs.uml.edu
+    Assignment: HW6 - Dynamic Mult Table
+    GUI Programming I - UMass Lowell
+    For this assignment, I am supposed to create a multiplication table dynamically given user input 
+    for width and length.
+    Copyright [2016] by Viet Tran. All rights reserved. 
+	May be freely copied or excerpted for educational purposes with credit to the author.
+    File Description: main.css file for HW6
 */
 
 
@@ -26,10 +31,6 @@ h1 {
     text-align: center;
 }
 
-#tableout {
-    text-align: center;
-}
-
 
 /* overall wrapper */
 
@@ -40,7 +41,6 @@ h1 {
     padding: 10px 30px 15px 30px;
     background: hsla(182, 53%, 85%, 0.83);
     border: 2px solid #988;
-    display: block;
     text-align: left;
 }
 
@@ -61,23 +61,28 @@ input[type=number] {
 
 /* disable scroller */
 
-input[type=number]::-webkit-inner-spin-button,
+
+/* current disabled to satisfy W3C Validator*/
+
+
+/*input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button,
 p {
     -webkit-appearance: none;
     margin: 0;
-}
+}*/
 
 
 /* change color if invalid */
 
-input[type=number]:valid {
+
+/*input[type=number]:valid {
     color: green;
 }
 
 input[type=number]:invalid {
     color: red;
-}
+}*/
 
 
 /*error messages*/
@@ -87,14 +92,12 @@ input[type=number]:invalid {
 #max_length_error_message,
 #min_length_error_message {
     color: red;
-    font-weight: bold;
 }
 
 
 /* submit button */
 
 input[type=submit] {
-    font-weight: bold;
     transition: color .25s ease-in-out, border-color .25s ease-in-out, background-color .25s ease-in-out;
     display: inline-block;
     text-decoration: none;
@@ -123,9 +126,23 @@ ul {
 
 /*shared settings*/
 
+
+/* padding for paragraph and unordered list*/
+
 p,
 ul {
     padding: 0;
+}
+
+
+/* bold text for error messages and submit button*/
+
+#min_width_error_message,
+#max_width_error_message,
+#max_length_error_message,
+#min_length_error_message,
+input[type=submit] {
+    font-weight: bold;
 }
 
 
