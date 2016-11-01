@@ -29,6 +29,7 @@ h1 {
     font-family: montserrat_regular;
     font-size: 50px;
     font-family: baloo_chettan;
+    padding-top: 150px;
 }
 
 .bold_montserrat {
@@ -51,16 +52,21 @@ h1 {
     color: #EDCA00;
 }
 
+.add_space {
+    padding-top: 20px;
+}
+
 img.profile_pic {
     width: 60%;
     height: 145px;
+    border-radius: 30%;
     position: relative;
-    border-radius: 20px;
 }
 
 #rcorners {
     background: none;
-    padding: 140px 0px 0px 30px;
+    padding-top: 10px;
+    padding-left: 10px;
     width: 200px;
     height: 160px;
     text-align: center;
@@ -69,34 +75,45 @@ img.profile_pic {
 
 #greetings {
     width: 40%;
-    margin: auto;
+    margin-right: auto;
+    margin-left: auto;
     text-align: center;
     font-family: lobster_reg;
     font-size: 60pt;
     color: #E8734F;
     line-height: 1;
-    padding: 20px 0px 20px 0px;
 }
 
 #message {
     font-family: montserrat_reg;
+    font-weight: 400;
     line-height: 1.5;
     text-align: justify;
-    padding: 0px 150px 0px 150px;
+    text-align-last: left;
+    padding: 20px 95px 0px 95px;
+}
+
+#message_header {
+    font-family: montserrat_reg;
+    font-size: 13pt;
 }
 
 #copyright {
     font-size: 9px;
     font-family: sans-serif;
+    float: right;
     color: black;
-    text-align: center;
+    text-align: right;
 }
 
 .boston_background {
-    background: url("boston_background.jpg") top right no-repeat;
+    background-image: url("boston_background.jpg");
     background-size: cover;
-    background-position: 100%;
-    padding-bottom: 75px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    padding-top: 10px;
+    padding-bottom: 180px;
+    margin: -20px -30px 15px -30px;
 }
 
 
@@ -105,15 +122,15 @@ img.profile_pic {
 .button {
     /*Step 2: Basic Button Styles*/
     height: auto;
-    width: 150px;
+    width: auto;
     padding: 5px;
     border-radius: 17px;
     background-color: #34696f;
     border: 2px solid rgba(33, 68, 72, 0.59);
     display: inline-block;
+    /*Step 3: Text Style*/
     color: rgba(0, 0, 0, 0.55);
     text-align: center;
-    /*Step 3: Text Style*/
     font: bold 1.2em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 
@@ -123,6 +140,10 @@ a.button {
 
 a.button:hover {
     background: #3d7a80;
+    background: -webkit-linear-gradient(top, #3d7a80, #2f5f63);
+    background: -moz-linear-gradient(top, #3d7a80, #2f5f63);
+    background: -o-linear-gradient(top, #3d7a80, #2f5f63);
+    background: -ms-linear-gradient(top, #3d7a80, #2f5f63);
 }
 
 ul.button-group>li {
@@ -142,8 +163,6 @@ ul.button-group {
 .dropdown {
     position: relative;
     display: inline-block;
-    width: 150px;
-    padding: 0px 0px 0px 0px;
 }
 
 
@@ -153,7 +172,7 @@ ul.button-group {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 150px;
+    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -162,17 +181,16 @@ ul.button-group {
 
 .dropdown-content a {
     color: black;
-    padding: 5px 12px 5px 12px;
+    padding: 12px 16px;
     text-decoration: none;
     display: block;
-    font-size: 12px;
 }
 
 
 /* Change color of dropdown links on hover */
 
 .dropdown-content a:hover {
-    background-color: hsla(24, 2%, 47%, 1)
+    background-color: #f1f1f1
 }
 
 
