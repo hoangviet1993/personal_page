@@ -13,8 +13,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8"><!-- complies with utf8 standard -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- fit viewing device-->
+    <meta charset="utf-8">
+    <!-- complies with utf8 standard -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fit viewing device-->
     <title> Dynamic Multiplication Table</title>
     <link href="style/main.css" rel="stylesheet">
     <!-- scripts-->
@@ -33,9 +35,7 @@
             <!-- input form-->
             <ul>
                 <!-- using ul to keep things ordered-->
-                <li>
-                    Length:
-                    <br>
+                <li>Length:<br>
                     <!-- all four input boxes only allowed number type, has a range restriction as well-->
                     <input type="number" min="-10" max="10" id="row_start" autofocus required placeholder="Starting value">
                     <label for="row_start" id="min_length_error_message"> </label>
@@ -45,8 +45,7 @@
                     <label for="row_end" id="max_length_error_message"> </label>
                     <!-- specificly customized error messages TBD -->
                 </li>
-                <li> Width:
-                    <br>
+                <li> Width:<br>
                     <input type="number" min="-10" max="10" id="col_start" required placeholder="Starting value">
                     <label for="col_start" id="min_width_error_message"> </label>
                 </li>
