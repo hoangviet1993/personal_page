@@ -25,6 +25,8 @@
 
 <body class="landing_page">
     <div id="page-wrapper">
+        <!--overall wrapper,middle of page-->
+        <!--heading 1: what the page is about -->
         <h1 class="title">HW6: Dynamic Multiplication Table</h1>
         <hr>
         <!--  Divider line -->
@@ -32,26 +34,35 @@
         <p> A simple JS WebApp that can dynamically draw a multiplication table given the length and width.<br>Please enter integers between -10 and 10.</p>
         <form id="range_input" onsubmit="return false;">
             <!-- Only refresh when click submit -->
-            <!-- input form-->
+            <!-- start of input form-->
             <ul>
-                <!-- using ul to keep things ordered-->
+                <!-- using ul and li to keep things ordered-->
                 <li>Length:<br>
-                    <!-- all four input boxes only allowed number type, has a range restriction as well-->
+                    <!--each li contains input box and corresponding error msg-->
+                    <!-- all four input boxes only allowed number type, has a range restriction as well and always required input-->
+                    <!-- min row input box ,always get autofocus-->
                     <input type="number" min="-10" max="10" id="row_start" autofocus required placeholder="Starting value">
                     <label for="row_start" id="min_length_error_message"> </label>
+                    <!-- error msg for min row-->
                 </li>
                 <li>
+                    <!-- max row input box -->
                     <input type="number" min="-10" max="10" id="row_end" required placeholder="Ending value">
                     <label for="row_end" id="max_length_error_message"> </label>
+                    <!-- error msg for max row-->
                     <!-- specificly customized error messages TBD -->
                 </li>
                 <li> Width:<br>
+                    <!-- min col input box -->
                     <input type="number" min="-10" max="10" id="col_start" required placeholder="Starting value">
                     <label for="col_start" id="min_width_error_message"> </label>
+                    <!-- error msg for min col -->
                 </li>
                 <li>
+                    <!-- max col input box -->
                     <input type="number" min="-10" max="10" id="col_end" required placeholder="Ending value">
                     <label for="col_end" id="max_width_error_message"> </label>
+                    <!-- error msg for max col TBD -->
                 </li>
             </ul>
             <input type="submit" id="submit_button" onclick="validate_form()" value="Draw Table!">
@@ -59,9 +70,12 @@
         </form>
         <hr>
         <!--  Divider line -->
+        <!-- Table paragraph,centralized, header row and first td child(column header) should be colored
+        differently from actual content of table-->
         <p id="tableout"></p>
     </div>
     <footer>
+        <!-- Copyright section + Validator link-->
         <br>Copyright 2016 by Viet Tran. Updated Nov 2016. This page is valid
         <a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fwww.cs.uml.edu%2F~vtran1%2FHW6%2F" target="_blank"><i class="fa fa-html5"></i>HTML5</a> and
         <a href="http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fwww.cs.uml.edu%2F%7Evtran1%2FHW6%2Fstyle%2Fmain.css&profile=css3&usermedium=all&warning=1&vextwarning=" target="_blank"><i class="fa fa-css3"></i>CSS3</a> as per W3C.

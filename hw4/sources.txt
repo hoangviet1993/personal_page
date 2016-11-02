@@ -1,0 +1,6 @@
+Sources:
+http://cssdeck.com/labs/another-simple-css3-dropdown-menu
+https://css-tricks.com/almanac/properties/t/text-align/
+https://designshack.net/articles/css/css-button-tutorial-how-to-code-buttons-in-5-simple-steps/
+http://www.w3schools.com/css/css_dropdowns.asp
+http://stackoverflow.com/questions/9262861/css-background-image-to-fit-width-height-should-auto-scale-in-proportion
