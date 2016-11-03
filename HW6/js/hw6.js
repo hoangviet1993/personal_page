@@ -50,11 +50,8 @@ function checkInput(row_start, row_finish, col_start, col_finish) {
     load_content_into_element('max_width_error_message', '');
 
     // load empty strings into error messages
-    var text = ''
+    var text = '';
         // declare empty text to store messages
-    if (row_start < -10 || row_finish > 10 || col_start < -10 || col_finish > 10) {
-        text = 'Please enter values between -10 and 10';
-    }
     if (row_start > row_finish) {
         text = 'Starting value cannot be bigger than Ending value';
         load_content_into_element('min_length_error_message', text);
