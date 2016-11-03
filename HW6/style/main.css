@@ -127,11 +127,13 @@ ul {
 /*shared settings*/
 
 
-/* padding for paragraph and unordered list*/
+/* padding for paragraph and unordered list ,now allows scrolling when overflow*/
 
 p,
 ul {
     padding: 0;
+    width: 750px;
+    overflow: auto;
 }
 
 

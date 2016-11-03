@@ -39,28 +39,28 @@
                 <!-- using ul and li to keep things ordered-->
                 <li>Length:<br>
                     <!--each li contains input box and corresponding error msg-->
-                    <!-- all four input boxes only allowed number type, has a range restriction as well and always required input-->
+                    <!-- all four input boxes only allowed number type,always required input-->
                     <!-- min row input box ,always get autofocus-->
-                    <input type="number" min="-10" max="10" id="row_start" autofocus required placeholder="Starting value">
+                    <input type="number" id="row_start" autofocus required placeholder="Starting value">
                     <label for="row_start" id="min_length_error_message"> </label>
                     <!-- error msg for min row-->
                 </li>
                 <li>
                     <!-- max row input box -->
-                    <input type="number" min="-10" max="10" id="row_end" required placeholder="Ending value">
+                    <input type="number" id="row_end" required placeholder="Ending value">
                     <label for="row_end" id="max_length_error_message"> </label>
                     <!-- error msg for max row-->
                     <!-- specificly customized error messages TBD -->
                 </li>
                 <li> Width:<br>
                     <!-- min col input box -->
-                    <input type="number" min="-10" max="10" id="col_start" required placeholder="Starting value">
+                    <input type="number" id="col_start" required placeholder="Starting value">
                     <label for="col_start" id="min_width_error_message"> </label>
                     <!-- error msg for min col -->
                 </li>
                 <li>
                     <!-- max col input box -->
-                    <input type="number" min="-10" max="10" id="col_end" required placeholder="Ending value">
+                    <input type="number" id="col_end" required placeholder="Ending value">
                     <label for="col_end" id="max_width_error_message"> </label>
                     <!-- error msg for max col TBD -->
                 </li>
