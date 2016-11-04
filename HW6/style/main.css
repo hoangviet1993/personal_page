@@ -15,6 +15,9 @@
 
 body {
     background: url("hw6_background.jpg") top right no-repeat;
+    /*source for background: 
+    http://paper-backgrounds.com/textureimages/2013/10/dark-blue-grunge-background.jpg
+    */
     background-attachment: fixed;
     color: #000;
     font-family: Arial, Helvetica, sans-serif;
