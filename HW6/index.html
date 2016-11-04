@@ -31,48 +31,48 @@
         <hr>
         <!--  Divider line -->
         <!-- brief description and instructions-->
-        <p> A simple JS WebApp that can dynamically draw a multiplication table given the length and width.<br>Please enter integers between -10 and 10.</p>
-        <form id="range_input" onsubmit="return false;">
-            <!-- Only refresh when click submit -->
-            <!-- start of input form-->
-            <ul>
-                <!-- using ul and li to keep things ordered-->
-                <li>Length:<br>
-                    <!--each li contains input box and corresponding error msg-->
-                    <!-- all four input boxes only allowed number type,always required input-->
-                    <!-- min row input box ,always get autofocus-->
-                    <input type="number" id="row_start" autofocus required placeholder="Starting value">
-                    <label for="row_start" id="min_length_error_message"> </label>
-                    <!-- error msg for min row-->
-                </li>
-                <li>
-                    <!-- max row input box -->
-                    <input type="number" id="row_end" required placeholder="Ending value">
-                    <label for="row_end" id="max_length_error_message"> </label>
-                    <!-- error msg for max row-->
-                    <!-- specificly customized error messages TBD -->
-                </li>
-                <li> Width:<br>
-                    <!-- min col input box -->
-                    <input type="number" id="col_start" required placeholder="Starting value">
-                    <label for="col_start" id="min_width_error_message"> </label>
-                    <!-- error msg for min col -->
-                </li>
-                <li>
-                    <!-- max col input box -->
-                    <input type="number" id="col_end" required placeholder="Ending value">
-                    <label for="col_end" id="max_width_error_message"> </label>
-                    <!-- error msg for max col TBD -->
-                </li>
-            </ul>
-            <input type="submit" id="submit_button" onclick="validate_form()" value="Draw Table!">
-            <!-- submit buttons which triggers the js function upon user click it-->
-        </form>
-        <hr>
-        <!--  Divider line -->
-        <!-- Table paragraph,centralized, header row and first td child(column header) should be colored
+        <p> A simple JS WebApp that can dynamically draw a multiplication table given the length and width.
+            <form id="range_input" onsubmit="return false;">
+                <!-- Only refresh when click submit -->
+                <!-- start of input form-->
+                <ul>
+                    <!-- using ul and li to keep things ordered-->
+                    <li>Length:<br>
+                        <!--each li contains input box and corresponding error msg-->
+                        <!-- all four input boxes only allowed number type,always required input-->
+                        <!-- min row input box ,always get autofocus-->
+                        <input type="number" id="row_start" autofocus required placeholder="Starting value">
+                        <label for="row_start" id="min_length_error_message"> </label>
+                        <!-- error msg for min row-->
+                    </li>
+                    <li>
+                        <!-- max row input box -->
+                        <input type="number" id="row_end" required placeholder="Ending value">
+                        <label for="row_end" id="max_length_error_message"> </label>
+                        <!-- error msg for max row-->
+                        <!-- specificly customized error messages TBD -->
+                    </li>
+                    <li> Width:<br>
+                        <!-- min col input box -->
+                        <input type="number" id="col_start" required placeholder="Starting value">
+                        <label for="col_start" id="min_width_error_message"> </label>
+                        <!-- error msg for min col -->
+                    </li>
+                    <li>
+                        <!-- max col input box -->
+                        <input type="number" id="col_end" required placeholder="Ending value">
+                        <label for="col_end" id="max_width_error_message"> </label>
+                        <!-- error msg for max col TBD -->
+                    </li>
+                </ul>
+                <input type="submit" id="submit_button" onclick="validate_form()" value="Draw Table!">
+                <!-- submit buttons which triggers the js function upon user click it-->
+            </form>
+            <hr>
+            <!--  Divider line -->
+            <!-- Table paragraph,centralized, header row and first td child(column header) should be colored
         differently from actual content of table-->
-        <p id="tableout"></p>
+            <p id="tableout"></p>
     </div>
     <footer>
         <!-- Copyright section + Validator link-->
