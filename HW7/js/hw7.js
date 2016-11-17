@@ -61,7 +61,7 @@ $(function() {
                 //switch back to valid color if return valid
             });
         }
-        return (Math.abs(parseInt($max.val())) - Math.abs((parseInt(value)) > 100));
+        return isNaN(parseInt($max.val())) || (Math.abs(parseInt($max.val())) - Math.abs((parseInt(value)) > 100));
     });
     // Initialize form validation on the input form.
     // It has the name attribute "input_form"
