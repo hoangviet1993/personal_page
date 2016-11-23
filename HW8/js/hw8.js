@@ -14,9 +14,17 @@ required(empty input),integer check,range check and number check
 // learnt a lot from
 // https://www.sitepoint.com/basic-jquery-form-validation-tutorial/
 $(function() {
+    /*Assignment 8 */
     slider();
+    //slider function - responsible to create 4 slider,update values as user drag and check valid form
+    //before draw table
     $("#tabs").tabs();
+    //enable JQUERY UI interface
     create_tabs();
+    //create tabs if user hit save button
+
+    /*Assignment 7 */
+    // got rid of a few validator method since logic improved
     //customized method for detecting float number
     $.validator.addMethod("isInt", function(value, element) {
         // calling function to check for float
@@ -105,29 +113,45 @@ $(function() {
 
 });
 
+/*
+ * Function description: Check valid form,if valid,draw table
+ * @param None
+ * @return None
+ * @throws None
+ */
 function check_valid_form() {
+    //only when form is valid, a table is drawn
     if ($("form#input_form").valid() == true) {
-        // Then make it submit, which should update the tab in the process.
         $("form#input_form").submit();
     }
 }
 
+/*
+ * Function description: Create slider and its settings
+ * @param None
+ * @return None
+ * @throws None
+ */
+/*
+https://jqueryui.com/slider/#hotelrooms
+*/
 function slider() {
     // slider ui for min row
+    //min = -10, max  =10, error if anything else
     $("#slider_row_start").slider({
         min: -10,
         max: 10,
         slide: function(event, ui) {
-            $("#row_start").val(ui.value);
-            check_valid_form();
+            $("#row_start").val(ui.value); //update value with input box
+            check_valid_form(); //check if valid to draw table
         }
-    });
+    }); //if user enter value manually
     $("#row_start").on("keyup", function() {
-        check_valid_form();
-        $("#slider_row_start").slider("value", this.value);
+        check_valid_form(); //check if valid value
+        $("#slider_row_start").slider("value", this.value); //update value if valid value
     });
 
-    $("#slider_row_end").slider({
+    $("#slider_row_end").slider({ //same goes for the rest
         min: -10,
         max: 10,
         slide: function(event, ui) {
@@ -139,7 +163,6 @@ function slider() {
         check_valid_form();
         $("#slider_row_end").slider("value", this.value);
     });
-
 
     $("#slider_col_start").slider({
         min: -10,
@@ -168,25 +191,44 @@ function slider() {
     });
 }
 
+/*
+ * Function description: Create new tabs when detect click event
+ * @param None
+ * @return None
+ * @throws None
+ */
+/*Learnt from https://jsfiddle.net/EKBqy/ */
 function create_tabs() {
+    $("#deleteTabs").click(function() {
+        //delete all tab button,including the input form, all current drawn table and input
+        var tabCount = $("#tabs li").length;
+        if (tabCount > 1) {
+            $("#tab-" + 1).remove();
+        }
+        //ran out of time to figure out how to delete just the dynamically created tabs
+        // cannot get a hold of dynamically created tab before DOM registers
+    });
+    /*http://jqueryui.com/tabs/#manipulation */
     $("#addTab").click(function() {
+        // only if valid form, then create a new tab
         if ($("form#input_form").valid() == true) {
             var row_start = Number(document.getElementById('row_start').value);
             var row_finish = Number(document.getElementById('row_end').value);
             var col_start = Number(document.getElementById('col_start').value);
             var col_finish = Number(document.getElementById('col_end').value);
+            //get all variables to make tab header
             var num_tabs = $('div#tabs ul li.tab').length + 1;
             //appending list item with title name
             $('ul').append(
                 '<li class="tab"><a href="#tab-' + num_tabs + '">[' + row_start + ',' + row_finish + ']' + '[' + col_start + ',' + col_finish + ']' + '</a>' + "<span class='ui-icon ui-icon-close' role='presentation'></span>" + '</li>');
-            //appending the actual tabs and the table
+            //appending the actual tab and the table
             $('#tabs').append(
                 '<div id="tab-' + num_tabs + '">' + $("#tableout").html() + '</div>');
             $('#tabs').tabs("refresh");
             // Close icon: removing the tab on click
             $('#tabs').on("click", "span.ui-icon-close", function() {
                 var panelId = $(this).closest("li").remove().attr("aria-controls");
-                console.log(panelId);
+                //console.log(this);
                 $("#" + panelId).remove();
                 $("#tabs").tabs("refresh");
             });
