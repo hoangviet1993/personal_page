@@ -46,7 +46,7 @@
             <!-- the original input form is a tab-->
             <div id="tabs">
                 <ul>
-                    <li class="tab"><a href="#tab-1">Input Form</a></span>
+                    <li class="tab"><a href="#tab-1">Input Form</a>
                     </li>
                     <!-- each of these li is one tab/entry -->
                     <!-- subsequently created tab is saved side by side with the form-->
@@ -55,32 +55,34 @@
                 <div id="tab-1">
                     <form name="input_form" id="input_form" autocomplete="off">
                         <!--setting up legend for instructions and better formatting-->
-                        <legend>Please enter integers only</legend>
-                        <!-- start of input form-->
-                        <br>
-                        <!-- using ul and li to keep things ordered-->
-                        Length:
-                        <br>
-                        <!--each li contains input box ,corresponding error msg and slider for changing values-->
-                        <!-- all four input boxes only allowed number type,always required input-->
-                        <!-- min row input box and slider,whichever input box has error will be focused-->
-                        <input type="text" id="row_start" name="row_start" placeholder="Starting value">
-                        <div id="slider_row_start"></div>
-                        <!-- max row input box and slider-->
-                        <input type="text" id="row_end" name="row_end" placeholder="Ending value">
-                        <div id="slider_row_end"></div>
-                        Width:
-                        <br>
-                        <!-- min col input box and slider -->
-                        <input type="text" id="col_start" name="col_start" placeholder="Starting value">
-                        <div id="slider_col_start"></div>
-                        <!-- max col input box and slider-->
-                        <input type="text" id="col_end" name="col_end" placeholder="Ending value">
-                        <div id="slider_col_end"></div>
-                        <!-- submit button which triggers the js function upon user click it-->
-                        <input type="submit" id="addTab" value="Save Table">
-                        <input type="submit" id="deleteTabs" value="Delete all tabs">
-                        <!-- save button to save current table into a tab,will check for valid form first-->
+                        <fieldset>
+                            <legend>Please enter integers only</legend>
+                            <!-- start of input form-->
+                            <br>
+                            <!-- using ul and li to keep things ordered-->
+                            Length:
+                            <br>
+                            <!--each li contains input box ,corresponding error msg and slider for changing values-->
+                            <!-- all four input boxes only allowed number type,always required input-->
+                            <!-- min row input box and slider,whichever input box has error will be focused-->
+                            <input type="text" id="row_start" name="row_start" placeholder="Starting value">
+                            <div id="slider_row_start"></div>
+                            <!-- max row input box and slider-->
+                            <input type="text" id="row_end" name="row_end" placeholder="Ending value">
+                            <div id="slider_row_end"></div>
+                            Width:
+                            <br>
+                            <!-- min col input box and slider -->
+                            <input type="text" id="col_start" name="col_start" placeholder="Starting value">
+                            <div id="slider_col_start"></div>
+                            <!-- max col input box and slider-->
+                            <input type="text" id="col_end" name="col_end" placeholder="Ending value">
+                            <div id="slider_col_end"></div>
+                            <!-- submit button which triggers the js function upon user click it-->
+                            <input type="submit" id="addTab" value="Save Table">
+                            <input type="submit" id="deleteTabs" value="Delete all tabs">
+                            <!-- save button to save current table into a tab,will check for valid form first-->
+                        </fieldset>
                     </form>
                 </div>
             </div>
