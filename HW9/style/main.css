@@ -11,16 +11,22 @@
 */
 
 
-/* main body with background */
+/* main body with background color */
 
 body {
     background-color: #E1E1E1;
 }
 
+
+/* ul list style */
+
 ul {
     list-style: none;
     padding: 0;
 }
+
+
+/* li list style */
 
 li {
     width: 40px;
@@ -29,6 +35,9 @@ li {
     text-align: center;
     list-style: none;
 }
+
+
+/* wrapper with flexbox */
 
 .wrapper {
     height: 100%;
@@ -47,6 +56,34 @@ li {
     */
 }
 
+
+/* score settings */
+
+#score {
+    text-align: center;
+    color: white;
+}
+
+
+/* error message box */
+
+#error_message {
+    background-color: hsla(17, 0%, 40%, 0.79);
+    box-shadow: 0 0 3px 1px #000;
+    height: 150px;
+    text-align: center;
+    left: 15px;
+    padding: 15px;
+    top: 15px;
+    width: 140px;
+    margin: 10px 0px 10px 10px;
+    float: left;
+    color: white;
+}
+
+
+/* entire board game lies on the mat */
+
 #mat {
     /* source :http://bg.siteorigin.com/ */
     background-image: url("../img/89960b21.png");
@@ -56,6 +93,9 @@ li {
     min-height: 750px;
     width: 950px;
 }
+
+
+/* contain all the playing tiles */
 
 #rack {
     background-image: url("../img/89960b21.png");
@@ -67,10 +107,16 @@ li {
     margin-left: 20px;
 }
 
+
+/* area that has the tile */
+
 #tile_area {
     min-height: 380px;
     margin: 10px;
 }
+
+
+/* area that allow return to the rack */
 
 #return_rack {
     background-color: hsla(195, 100%, 25%, 0.8);
@@ -81,6 +127,9 @@ li {
     margin-top: 10px;
     color: white;
 }
+
+
+/* shuffle a tile and get a random tile! TBD */
 
 #shuffle_tile {
     background-color: hsla(354, 100%, 25%, 0.48);
@@ -107,6 +156,9 @@ li {
     float: left;
 }
 
+
+/* all input button */
+
 input[type=submit] {
     transition: color .25s ease-in-out, border-color .25s ease-in-out, background-color .25s ease-in-out;
     text-decoration: none;
@@ -121,12 +173,8 @@ input[type=submit] {
     display: block;
 }
 
-#game_board {
-    width: 740px;
-    float: right;
-    min-height: 680px;
-    margin: 10px 20px 10px 0px;
-}
+
+/* square settings,white by default */
 
 .square {
     background-color: white;
@@ -137,6 +185,9 @@ input[type=submit] {
     width: 44px;
 }
 
+
+/* table settings to display the game board */
+
 table {
     width: 740px;
     min-height: 680px;
@@ -146,6 +197,9 @@ table {
     padding: 5px;
 }
 
+
+/* each cell settings, with customized color for different tile scores */
+
 td {
     background-color: white;
     border: 1px dotted grey;
@@ -154,26 +208,44 @@ td {
     width: 44px;
 }
 
+
+/*double word is red color*/
+
 td.double_word {
     background-color: darkred;
 }
+
+
+/*triple word is pink color*/
 
 td.triple_word {
     background-color: palevioletred;
 }
 
+
+/*double letter is sky blue*/
+
 td.double_letter {
     background-color: lightskyblue;
 }
+
+
+/*triple letter is dark blue*/
 
 td.triple_letter {
     background-color: darkblue;
 }
 
+
+/*start has a star, inspired by Jason Downing*/
+
 td.start {
     background: url("../img/star.png") no-repeat;
     background-size: cover;
 }
+
+
+/* tile settings with before and after selector to display word and value */
 
 .tile {
     background: url("../img/tile.png") no-repeat;
@@ -187,6 +259,9 @@ td.start {
     color: black;
     position: relative;
 }
+
+
+/*before display the letter, all 26 letters*/
 
 .tile::before {
     font-size: 21px;
@@ -303,7 +378,7 @@ td.start {
 .tile.tile-_::before {
     content: "";
 }
-
+/*after selector display the value of each letter*/
 .tile::after {
     font-size: 9px;
     position: absolute;

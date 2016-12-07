@@ -2,16 +2,12 @@
 <html lang="en">
 <!--
     File: ~/index.html for HW 9
-    91.461 Assignment 9: Implementing a Bit of Scrabble with Drag-and-Drop
-    Jason Downing - student at UMass Lowell in 91.461 GUI Programming I
-    Contact: jdowning@cs.uml.edu or jason_downing@student.uml.edu
+    91.461 Assignment 9: 1/3 of Scrabble Game
+    Viet Tran Quoc Hoang- student at UMass Lowell in 91.461 GUI Programming I
+    Contact: vtran1@cs.uml.edu 
     MIT Licensed - see http://opensource.org/licenses/MIT for details.
     May be freely copied or excerpted for educational purposes with credit to the author.
-    It will contain a full feature Scrabble game that will do tons of fun stuff
-    like connect to external APIs, make use of the jQuery UI library, and even
-    score / check for valid words / etc.
-    Name : Viet Tran Quoc Hoang
-  -->
+-->
 
 <head>
     <meta charset="utf-8">
@@ -22,27 +18,36 @@
     <title>Crappy Scrabble</title>
     <!--  jQuery UI Theme -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/dark-hive/jquery-ui.min.css">
-    <!--  CSS file to override stuff, different file so I can modify stuff and rewrite the CSS. -->
     <link rel="stylesheet" href="style/main.css">
-
+    <!-- css link -->
     <!--  Custom favicon inspired by Jason Downing
         URL: http://orig10.deviantart.net/7bc3/f/2013/338/8/8/flat_scrabble_icon_by_awesomestwinner-d6wpolw.png -->
     <link rel="icon" href="img/scrabble_icon.png" type="image/x-icon">
 </head>
 
 <body>
+    <!-- wrapper for entire page -->
     <div class="wrapper">
         <div id="mat">
+            <!-- mat design inspired by Asalani -->
             <div id="tableout"></div>
+            <!-- Table output for game board -->
             <div id="pane-l">
-                <p>Tiles must be placed in a straight line without gaps</p>
+                <!-- Left panel for scores and buttons -->
+                <div id="score">Score : </div>
+                <!-- Buttons -->
                 <input type="submit" id="end_turn" value="End Turn">
                 <input type="submit" id="reset_board" value="Clear Board">
             </div>
-
+            <!-- Error Msg -->
+            <div id="error_message">
+                Scrabble Ready
+            </div>
         </div>
+        <!-- Rack for containing all word tiles -->
         <div id="rack" class="rack-ui">
             <div id="tile_area">
+                <!-- Tile area for all tiles -->
                 <ul class="hands">
                     <!--<li id="tile" class=" tile tile-b"></li>
                 <li id="tile" class=" tile tile-c"></li>
@@ -52,7 +57,9 @@
                 </ul>
             </div>
             <div id="return_rack">Return</div>
+            <!-- Return to rack -->
             <div id="shuffle_tile">Shuffle</div>
+            <!-- TBD: will get a new tile -->
         </div>
     </div>
 
@@ -63,11 +70,17 @@
     <script type='text/javascript' src="http://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.js"></script>
     <!-- jQuery UI Slider and Tab Wigets -->
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Prof Jess map for tiles -->
     <script type='text/javascript' src="js/Scrabble_Pieces_AssociativeArray_Jesse.js"></script>
+    <!-- variables js file -->
     <script type='text/javascript' src="js/variables.js"></script>
+    <!-- handle player hand -->
     <script type='text/javascript' src="js/player_hand.js"></script>
     <!-- JS file to handle the scrabble game. -->
     <script type='text/javascript' src="js/board.js"></script>
+    <!-- calculate score -->
+    <script type='text/javascript' src="js/score.js"></script>
+    <!-- scrabble game logic -->
     <script type='text/javascript' src="js/scrabble.js"></script>
     </div>
 </body>

@@ -16,7 +16,8 @@ function draw_board() {
         0, 3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 3, 0,
         4, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 0, 4
     ];
-    var table = '<table>';
+    // each cell value of the table
+    var table = '<table>'; // opening up table tag
     table += '<tr>';
     var row_counter = 0;
     var row_num = 1;
@@ -24,6 +25,7 @@ function draw_board() {
     for (var i = 0; i < cell_value.length; i++) {
         switch (cell_value[i]) {
             case 5:
+                // if meet of these value, will color table differently
                 table += "<td class = 'start row-" + row_num + " col-" + col_num++ + "'> </td>";
                 row_counter++;
                 break;
@@ -63,11 +65,4 @@ function draw_board() {
     table += '</tr>'; // close out one row of table
     table += '</table>'; // close out table tag
     document.getElementById('tableout').innerHTML = table; // push table content into element
-}
-
-function get_all_tiles_on_board(letters_list) {
-    var tiles = document.getElementsByTagName("LI");
-    for (var i = 0; i < tiles.length; i++) {
-        console.log(tiles[i]);
-    }
 }
