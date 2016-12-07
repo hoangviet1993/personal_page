@@ -1,0 +1,421 @@
+/*
+    Name: Viet Tran Quoc Hoang
+    Contact : vtran1@cs.uml.edu
+    Assignment: HW6 - Dynamic Mult Table
+    GUI Programming I - UMass Lowell
+    For this assignment, I am supposed to create a multiplication table dynamically given user input 
+    for width and length.
+    Copyright [2016] by Viet Tran. All rights reserved. 
+	May be freely copied or excerpted for educational purposes with credit to the author.
+    File Description: main.css file for HW6
+*/
+
+
+/* main body with background */
+
+body {
+    background-color: #E1E1E1;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    text-align: center;
+    list-style: none;
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    /* Safari 8 */
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    /* Safari 8 */
+    justify-content: center;
+    -webkit-justify-content: center;
+    /* Safari 8 */
+    /*Source 
+    http://stackoverflow.com/questions/5523632/aligning-a-floatleft-div-to-center
+    */
+}
+
+#mat {
+    /* source :http://bg.siteorigin.com/ */
+    background-image: url("../img/89960b21.png");
+    border: 5px solid black;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px 0 #000000;
+    min-height: 750px;
+    width: 950px;
+}
+
+#rack {
+    background-image: url("../img/89960b21.png");
+    border-radius: 5px;
+    border: 5px solid #000;
+    box-shadow: 0 5px 20px 0 #000000;
+    min-height: 650px;
+    width: 75px;
+    margin-left: 20px;
+}
+
+#tile_area {
+    min-height: 380px;
+    margin: 10px;
+}
+
+#return_rack {
+    background-color: hsla(195, 100%, 25%, 0.8);
+    box-shadow: 0 0 3px 1px #000;
+    width: 75px;
+    min-height: 80px;
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+}
+
+#shuffle_tile {
+    background-color: hsla(354, 100%, 25%, 0.48);
+    box-shadow: 0 0 3px 1px #000;
+    width: 75px;
+    min-height: 80px;
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+}
+
+
+/* Location for the menu and score UI components. */
+
+#pane-l {
+    background-color: hsla(17, 0%, 40%, 0.79);
+    box-shadow: 0 0 3px 1px #000;
+    height: inherit;
+    left: 15px;
+    padding: 15px;
+    top: 15px;
+    width: 140px;
+    margin: 10px 0px 10px 10px;
+    float: left;
+}
+
+input[type=submit] {
+    transition: color .25s ease-in-out, border-color .25s ease-in-out, background-color .25s ease-in-out;
+    text-decoration: none;
+    border: 1px solid#d2d7dc;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: .50em;
+    padding: 20px;
+    cursor: pointer;
+    width: 120px;
+    font-size: 14px;
+    margin: 10px;
+    display: block;
+}
+
+#game_board {
+    width: 740px;
+    float: right;
+    min-height: 680px;
+    margin: 10px 20px 10px 0px;
+}
+
+.square {
+    background-color: white;
+    border: 1px dotted grey;
+    float: left;
+    height: 44px;
+    padding: 1px;
+    width: 44px;
+}
+
+table {
+    width: 740px;
+    min-height: 680px;
+    margin-bottom: -5px;
+    text-align: center;
+    float: right;
+    padding: 5px;
+}
+
+td {
+    background-color: white;
+    border: 1px dotted grey;
+    float: left;
+    height: 44px;
+    width: 44px;
+}
+
+td.double_word {
+    background-color: darkred;
+}
+
+td.triple_word {
+    background-color: palevioletred;
+}
+
+td.double_letter {
+    background-color: lightskyblue;
+}
+
+td.triple_letter {
+    background-color: darkblue;
+}
+
+td.start {
+    background: url("../img/star.png") no-repeat;
+    background-size: cover;
+}
+
+.tile {
+    background: url("../img/tile.png") no-repeat;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+    vertical-align: middle;
+    color: black;
+    position: relative;
+}
+
+.tile::before {
+    font-size: 21px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+}
+
+.tile.tile-a::before {
+    content: "A";
+}
+
+.tile.tile-b::before {
+    content: "B";
+}
+
+.tile.tile-c::before {
+    content: "C";
+}
+
+.tile.tile-d::before {
+    content: "D";
+}
+
+.tile.tile-e::before {
+    content: "E";
+}
+
+.tile.tile-f::before {
+    content: "F";
+}
+
+.tile.tile-g::before {
+    content: "G";
+}
+
+.tile.tile-h::before {
+    content: "H";
+}
+
+.tile.tile-i::before {
+    content: "I";
+}
+
+.tile.tile-j::before {
+    content: "J";
+}
+
+.tile.tile-k::before {
+    content: "K";
+}
+
+.tile.tile-l::before {
+    content: "L";
+}
+
+.tile.tile-m::before {
+    content: "M";
+}
+
+.tile.tile-n::before {
+    content: "N";
+}
+
+.tile.tile-o::before {
+    content: "O";
+}
+
+.tile.tile-p::before {
+    content: "P";
+}
+
+.tile.tile-q::before {
+    content: "Q";
+}
+
+.tile.tile-r::before {
+    content: "R";
+}
+
+.tile.tile-s::before {
+    content: "S";
+}
+
+.tile.tile-t::before {
+    content: "T";
+}
+
+.tile.tile-u::before {
+    content: "U";
+}
+
+.tile.tile-v::before {
+    content: "V";
+}
+
+.tile.tile-w::before {
+    content: "W";
+}
+
+.tile.tile-x::before {
+    content: "X";
+}
+
+.tile.tile-y::before {
+    content: "Y";
+}
+
+.tile.tile-z::before {
+    content: "Z";
+}
+
+.tile.tile-_::before {
+    content: "";
+}
+
+.tile::after {
+    font-size: 9px;
+    position: absolute;
+    bottom: 0;
+    padding-left: 10px;
+    left: 21px;
+}
+
+.tile.tile-a::after {
+    content: "1";
+}
+
+.tile.tile-b::after {
+    content: "3";
+}
+
+.tile.tile-c::after {
+    content: "3";
+}
+
+.tile.tile-d::after {
+    content: "2";
+}
+
+.tile.tile-e::after {
+    content: "1";
+}
+
+.tile.tile-f::after {
+    content: "4";
+}
+
+.tile.tile-g::after {
+    content: "2";
+}
+
+.tile.tile-h::after {
+    content: "4";
+}
+
+.tile.tile-i::after {
+    content: "1";
+}
+
+.tile.tile-j::after {
+    content: "8";
+}
+
+.tile.tile-k::after {
+    content: "5";
+}
+
+.tile.tile-l::after {
+    content: "1";
+}
+
+.tile.tile-m::after {
+    content: "3";
+}
+
+.tile.tile-n::after {
+    content: "1";
+}
+
+.tile.tile-o::after {
+    content: "1";
+}
+
+.tile.tile-p::after {
+    content: "3";
+}
+
+.tile.tile-q::after {
+    content: "10";
+}
+
+.tile.tile-r::after {
+    content: "1";
+}
+
+.tile.tile-s::after {
+    content: "1";
+}
+
+.tile.tile-t::after {
+    content: "1";
+}
+
+.tile.tile-u::after {
+    content: "1";
+}
+
+.tile.tile-v::after {
+    content: "4";
+}
+
+.tile.tile-w::after {
+    content: "4";
+}
+
+.tile.tile-x::after {
+    content: "8";
+}
+
+.tile.tile-y::after {
+    content: "4";
+}
+
+.tile.tile-z::after {
+    content: "10";
+}
+
+.tile.tile-_::after {
+    content: "";
+}
