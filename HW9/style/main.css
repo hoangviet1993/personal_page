@@ -70,7 +70,7 @@ li {
 #error_message {
     background-color: hsla(17, 0%, 40%, 0.79);
     box-shadow: 0 0 3px 1px #000;
-    height: 150px;
+    height: 80px;
     text-align: center;
     left: 15px;
     padding: 15px;
@@ -206,13 +206,30 @@ td {
     float: left;
     height: 44px;
     width: 44px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 13px;
+    color: black;
 }
 
 
 /*double word is red color*/
 
 td.double_word {
-    background-color: darkred;
+    background-color: hsla(360, 47%, 50%, 1);
+}
+
+
+/*inserting letters*/
+
+td.double_word::before {
+    /*top: 0;
+    left: -10px;*/
+    height: 40px;
+    vertical-align: middle;
+    position: relative;
+    content: "2x WORD";
+    padding-top: 10px;
 }
 
 
@@ -223,6 +240,19 @@ td.triple_word {
 }
 
 
+/*inserting letters*/
+
+td.triple_word::before {
+    /*top: 0;
+    left: -10px;*/
+    height: 40px;
+    vertical-align: middle;
+    position: relative;
+    content: "3x WORD";
+    padding-top: 10px;
+}
+
+
 /*double letter is sky blue*/
 
 td.double_letter {
@@ -230,10 +260,38 @@ td.double_letter {
 }
 
 
+/*inserting letters*/
+
+td.double_letter::before {
+    /*top: 0;
+    left: -10px;*/
+    font-size: 12px;
+    height: 40px;
+    vertical-align: middle;
+    position: relative;
+    content: "2x LETTER";
+    padding-top: 10px;
+}
+
+
 /*triple letter is dark blue*/
 
 td.triple_letter {
-    background-color: darkblue;
+    background-color: hsla(233, 33%, 50%, 1);
+}
+
+
+/*inserting letters*/
+
+td.triple_letter::before {
+    /*top: 0;
+    left: -10px;*/
+    height: 40px;
+    vertical-align: middle;
+    position: relative;
+    content: "3x LETTER";
+    padding-top: 10px;
+    font-size: 12px;
 }
 
 
@@ -378,7 +436,10 @@ td.start {
 .tile.tile-_::before {
     content: "";
 }
+
+
 /*after selector display the value of each letter*/
+
 .tile::after {
     font-size: 9px;
     position: absolute;

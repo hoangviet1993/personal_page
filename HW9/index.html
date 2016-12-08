@@ -37,7 +37,8 @@
                 <div id="score">Score : </div>
                 <!-- Buttons -->
                 <input type="submit" id="end_turn" value="End Turn">
-                <input type="submit" id="reset_board" value="Clear Board">
+                <input type="submit" id="new_hand" value="New Hand">
+                <input type="submit" id="new_game" value="New Game">
             </div>
             <!-- Error Msg -->
             <div id="error_message">
@@ -58,7 +59,7 @@
             </div>
             <div id="return_rack">Return</div>
             <!-- Return to rack -->
-            <div id="shuffle_tile">Shuffle</div>
+            <div id="shuffle_tile">Exchange</div>
             <!-- TBD: will get a new tile -->
         </div>
     </div>
@@ -73,9 +74,14 @@
     <!-- Prof Jess map for tiles -->
     <script type='text/javascript' src="js/Scrabble_Pieces_AssociativeArray_Jesse.js"></script>
     <!-- variables js file -->
-    <script type='text/javascript' src="js/variables.js"></script>
     <!-- handle player hand -->
+    <script type='text/javascript' src="js/variables.js"></script>
+    <script type='text/javascript' src="js/draggable.js"></script>
+    <!-- handle draggable logic-->
+    <script type='text/javascript' src="js/droppable.js"></script>
+
     <script type='text/javascript' src="js/player_hand.js"></script>
+    <!-- handle droppable logic-->
     <!-- JS file to handle the scrabble game. -->
     <script type='text/javascript' src="js/board.js"></script>
     <!-- calculate score -->
