@@ -1,3 +1,9 @@
+/*
+    File: scrabble associate array from Dr. Heines 
+    91.461 Assignment 9: 1/3 of Scrabble Game
+    Viet Tran Quoc Hoang- student at UMass Lowell in 91.461 GUI Programming I
+    Contact: vtran1@cs.uml.edu 
+*/
 /*  File:  /~heines/91.461/91.461-2015-16f/461-assn/Scrabble_Pieces_AssociativeArray_Jesse.js
  *  Jesse M. Heines, UMass Lowell Computer Science, heines@cs.uml.edu
  *  Copyright (c) 2015 by Jesse M. Heines.  All rights reserved.  May be freely 
@@ -7,7 +13,7 @@
  *  updated by JMH on November 27, 2015 at 10:22 AM to add original-distribution
  */
 function make_bags() {
-    // stuff the bag up with all the tiles and its data
+    // stuff the bag up with all the tiles as the keys and each of em is an object with properties
     ScrabbleTiles["a"] = { "value": 1, "original_distribution": 9, "number_remaining": 9 };
     ScrabbleTiles["b"] = { "value": 3, "original_distribution": 2, "number_remaining": 2 };
     ScrabbleTiles["c"] = { "value": 3, "original_distribution": 2, "number_remaining": 2 };
@@ -35,5 +41,15 @@ function make_bags() {
     ScrabbleTiles["y"] = { "value": 4, "original_distribution": 2, "number_remaining": 2 };
     ScrabbleTiles["z"] = { "value": 10, "original_distribution": 1, "number_remaining": 1 };
     ScrabbleTiles["_"] = { "value": 0, "original_distribution": 2, "number_remaining": 0 };
+    // currently , there is no flex tile - I need to think of a foolproof method of
+    // inputting the tile cos I dont like the msg box method
 }
-// currently , there is no flex tile
+
+function calculate_total_remaining() {
+    var total = 0;
+    var lowercase_alphabet = "abcdefghijklmnopqrstuvwxyz_";
+    for (var i = 0; i < lowercase_alphabet.length; i++) {
+        total += ScrabbleTiles[lowercase_alphabet[i]].number_remaining;
+    }
+    $("#total_remaining").html("Letters left: " + total);
+}

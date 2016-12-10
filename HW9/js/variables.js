@@ -1,3 +1,11 @@
+/*
+    File: variables.js for Hw9 global variables
+    91.461 Assignment 9: 1/3 of Scrabble Game
+    Viet Tran Quoc Hoang- student at UMass Lowell in 91.461 GUI Programming I
+    Contact: vtran1@cs.uml.edu 
+    MIT Licensed - see http://opensource.org/licenses/MIT for details.
+    May be freely copied or excerpted for educational purposes with credit to the author.
+*/
 var char_list = []; // list of char on rack
 var ScrabbleTiles = []; // the bag that contain all tiles
 var word_list = []; // list of completed word :TBD

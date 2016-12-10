@@ -1,3 +1,11 @@
+/*
+    File: board.js for Hw9 handle drawing the board and some of its logic
+    91.461 Assignment 9: 1/3 of Scrabble Game
+    Viet Tran Quoc Hoang- student at UMass Lowell in 91.461 GUI Programming I
+    Contact: vtran1@cs.uml.edu 
+    MIT Licensed - see http://opensource.org/licenses/MIT for details.
+    May be freely copied or excerpted for educational purposes with credit to the author.
+*/
 function draw_board() {
     var cell_value = [
         4, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 0, 4,

@@ -33,14 +33,15 @@
             <div id="tableout"></div>
             <!-- Table output for game board -->
             <div id="pane-l">
-                <!-- Left panel for scores and buttons -->
-                <div id="score">Score : </div>
+                <!-- Left panel for scores,total letters and buttons -->
+                <div id="score">Score: 0</div>
+                <div id="total_remaining"></div>
                 <!-- Buttons -->
                 <input type="submit" id="end_turn" value="End Turn">
                 <input type="submit" id="new_hand" value="New Hand">
                 <input type="submit" id="new_game" value="New Game">
             </div>
-            <!-- Error Msg -->
+            <!-- Message box -->
             <div id="text_box">
                 <div id="error_message">
                     Scrabble Ready
@@ -54,11 +55,6 @@
             <div id="tile_area">
                 <!-- Tile area for all tiles -->
                 <ul class="hands">
-                    <!--<li id="tile" class=" tile tile-b"></li>
-                <li id="tile" class=" tile tile-c"></li>
-                <li id="tile" class=" tile tile-a"></li>
-                <li id="tile" class=" tile tile-d"></li>
-                <li id="tile" class=" tile tile-e"></li>-->
                 </ul>
             </div>
             <div id="return_rack">Return</div>
@@ -67,26 +63,17 @@
             <!-- TBD: will get a new tile -->
         </div>
     </div>
-
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins). -->
     <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <!-- jQuery Validation plugin -->
-    <script type='text/javascript' src="http://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.js"></script>
     <!-- jQuery UI Slider and Tab Wigets -->
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <!-- Prof Jess map for tiles -->
     <script type='text/javascript' src="js/Scrabble_Pieces_AssociativeArray_Jesse.js"></script>
-    <!-- variables js file -->
-    <!-- handle player hand -->
+    <!-- global variables js file -->
     <script type='text/javascript' src="js/variables.js"></script>
-    <script type='text/javascript' src="js/draggable.js"></script>
-    <!-- handle draggable logic-->
-    <script type='text/javascript' src="js/droppable.js"></script>
-
+    <!-- handle player hand -->
     <script type='text/javascript' src="js/player_hand.js"></script>
-    <!-- handle droppable logic-->
-    <!-- JS file to handle the scrabble game. -->
+    <!-- JS file to handle the scrabble board -->
     <script type='text/javascript' src="js/board.js"></script>
     <!-- calculate score -->
     <script type='text/javascript' src="js/score.js"></script>

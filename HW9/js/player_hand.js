@@ -1,3 +1,11 @@
+/*
+    File: hand.js for hw9 , handle drawing tiles from bag and display them
+    91.461 Assignment 9: 1/3 of Scrabble Game
+    Viet Tran Quoc Hoang- student at UMass Lowell in 91.461 GUI Programming I
+    Contact: vtran1@cs.uml.edu 
+    MIT Licensed - see http://opensource.org/licenses/MIT for details.
+    May be freely copied or excerpted for educational purposes with credit to the author.
+*/
 jQuery.fn.swap = function(b) {
     // method from: http://blog.pengoworks.com/index.cfm/2008/9/24/A-quick-and-dirty-swap-method-for-jQuery
     b = jQuery(b)[0];
@@ -44,6 +52,8 @@ function draw_tiles(letters_drawn, num) {
         // store letter in an array
     }
     console.log(char_list);
+    calculate_total_remaining();
+    // update total
     // console.log(letters_drawn);
 }
 

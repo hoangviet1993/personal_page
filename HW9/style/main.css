@@ -1,7 +1,8 @@
 /*
     Name: Viet Tran Quoc Hoang
     Contact : vtran1@cs.uml.edu
-    Assignment: HW6 - Dynamic Mult Table
+    Assignment: HW9 - Implement a bit of Scrabble 
+    File: Scrabble game css files
     GUI Programming I - UMass Lowell
     For this assignment, I am supposed to create a multiplication table dynamically given user input 
     for width and length.
@@ -57,9 +58,10 @@ li {
 }
 
 
-/* score settings */
+/* score and total tiles settings */
 
-#score {
+#score,
+#total_remaining {
     text-align: center;
     color: white;
 }

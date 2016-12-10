@@ -1,3 +1,11 @@
+/*
+    File: scrabble.js for Hw9 handle the main game logic
+    91.461 Assignment 9: 1/3 of Scrabble Game
+    Viet Tran Quoc Hoang- student at UMass Lowell in 91.461 GUI Programming I
+    Contact: vtran1@cs.uml.edu 
+    MIT Licensed - see http://opensource.org/licenses/MIT for details.
+    May be freely copied or excerpted for educational purposes with credit to the author.
+*/
 $(document).ready(function() {
     make_bags();
     draw_board();
@@ -17,6 +25,7 @@ $(document).ready(function() {
             ScrabbleTiles[match[1]].number_remaining++;
             // put the tiles back to the bag
         }
+        calculate_total_remaining();
         letters_drawn = []; // empty out all arrays that contains relevant data abt player hand
         char_list = [];
         draw_tiles(letters_drawn, current_no_of_tiles); // only draw the no of tiles on hand
@@ -32,12 +41,12 @@ $(document).ready(function() {
         letters_drawn = []; // reset rack arrays 
         tile_class_array = []; // reset tile obj array
         char_list = [];
-        draw_tiles(letters_drawn, 7); // 
-        generate_player_hand(letters_drawn);
+        draw_tiles(letters_drawn, 7); // draw brand new 7 tiles
+        generate_player_hand(letters_drawn); // render tiles drawn
         score = 0;
         $("#error_message").html("Game Restarted");
         $("#tile_removed").html("");
-        $("#score").html("Score : 0");
+        $("#score").html("Score: 0");
         // reset the entire game
         // refreshes all array
         // draw new hands as well refreshes the data structure of the bag
@@ -69,6 +78,7 @@ $(document).ready(function() {
         // if start is filled and tiles are in legal locations
         var word = join_word(tile_class_array, "");
         // join the letters up into a word
+        // Thankful for Jason for sharing this
         if (dict[word]) {
             // thankful for Jason for finding and sharing this
             score = display_word_and_add_score(tile_class_array, score);
@@ -86,7 +96,9 @@ $(document).ready(function() {
             console.log(tile_class_array);
             return;
         }
-
+        // I decided to follow the specs and just reset the board once a word has been matched
+        // with one from the dictionary 
+        // might come back to this once I have more time
         // } else {
         //     console.log("The tiles are not in valid locations, if get here, we missing a case")
         //     return;
@@ -184,6 +196,7 @@ function make_shuffle_droppable() {
             // console.log("BEFORE:" + ScrabbleTiles[toString(match[1])].number_remaining);
             var match = draggableID.match(/(\w)\d*/);
             ScrabbleTiles[match[1]].number_remaining++;
+            calculate_total_remaining();
             // using regex just to grab the letter from tile id( w1 -> w)
             // and put it back to the "bag"
             // console.log("AFTER" + ScrabbleTiles[match[1]].number_remaining);
