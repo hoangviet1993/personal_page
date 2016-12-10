@@ -11,6 +11,7 @@ jQuery.fn.swap = function(b) {
 
 function draw_tiles(letters_drawn, num) {
     var counter = 0;
+    var new_div;
     for (var i = 0; i < num; i++) {
         var rand_int = getRandomInt(0, 26);
         do {
@@ -30,17 +31,16 @@ function draw_tiles(letters_drawn, num) {
             // console.log("new chr found");
             // if all unique char
             // add id to li
-            var newdiv = $('<li id="' + chr + '"class="ui-state-default tile tile-' + chr + '"></div>');
-            // char_list.push(chr);
+            new_div = $('<li id="' + chr + '"class="ui-state-default tile tile-' + chr + '"></div>');
+            char_list.push(chr);
         } else {
             // if char already in list, add number to id
             // console.log('found repeated chr');
-            var newdiv = $('<li id="' + chr + ++counter + '"class="ui-state-default tile tile-' + chr + '"></div>');
-            //char_list.push(chr + counter);
+            new_div = $('<li id="' + chr + ++counter + '"class="ui-state-default tile tile-' + chr + '"></div>');
+            char_list.push(chr + counter);
         }
-        letters_drawn.push(newdiv);
-        char_list.push(chr);
-        // push newdiv to array to store 
+        letters_drawn.push(new_div);
+        // push new_div to array to store 
         // store letter in an array
     }
     console.log(char_list);
@@ -60,6 +60,19 @@ function generate_player_hand(letters_drawn) {
         // draw rack
     }
     make_tile_draggable();
+}
+
+function make_tile_draggable() {
+    $(".tile").draggable({
+        revert: 'invalid',
+        // put the tile back if drag fail
+        helper: "clone",
+        // only use the clone instead of the actual thing
+        stop: function() {
+            // Source : taken from Jason Downing 
+            $(this).draggable('option', 'revert', 'invalid');
+        },
+    });
 }
 
 function replenish_player_hands(letters_drawn, tile_class_array) {

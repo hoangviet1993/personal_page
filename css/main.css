@@ -1,26 +1,60 @@
+/*
+        Name: Viet Tran Quoc Hoang
+         Contact: viet_tran1@student.uml.edu 
+         Major:Computer Science School : UMass Lowell Class: GUI Prog 1 
+         Date created: Oct 4,2015 
+         Date last edited : Dec 9,2015
+         A4: Styling with CSS
+         Description: Added several css features 
+        Copyright [2016] by Viet Tran. All rights reserved. May be freely copied or excerpted for educational purposes with credit to the author.
+ */
+
+
+/*body settings, need height and margin to make full page*/
+
 body {
     background: papayawhip;
+    height: 100%;
+    margin: 0;
 }
+
+
+/* custom font family settings */
+
+
+/*balo chettean font family*/
 
 @font-face {
     font-family: baloo_chettan;
     src: url('BalooChettan-Regular.ttf');
 }
 
+
+/*regular montserrat font family*/
+
 @font-face {
     font-family: montserrat_reg;
     src: url('Montserrat-Regular.ttf');
 }
+
+
+/*bold montserrat font family*/
 
 @font-face {
     font-family: montserrat_bold;
     src: url('Montserrat-Bold.ttf');
 }
 
+
+/*regular lobster font family*/
+
 @font-face {
     font-family: lobster_reg;
     src: url('Lobster-Regular.ttf');
 }
+
+
+/*header 1 settings*/
 
 h1 {
     color: snow;
@@ -31,25 +65,43 @@ h1 {
     font-family: baloo_chettan;
 }
 
+
+/*bold class font*/
+
 .bold_montserrat {
     font-family: montserrat_bold;
 }
+
+
+/* white text class */
 
 .color_white {
     color: white;
 }
 
+
+/* blue text class*/
+
 .color_blue {
     color: #4F5BDB;
 }
+
+
+/*red text class*/
 
 .color_red {
     color: #D63A3A;
 }
 
+
+/*yellow text class*/
+
 .color_yellow {
     color: #EDCA00;
 }
+
+
+/*profile picture settings*/
 
 img.profile_pic {
     width: 60%;
@@ -57,6 +109,9 @@ img.profile_pic {
     position: relative;
     border-radius: 20px;
 }
+
+
+/*rounded corners div*/
 
 #rcorners {
     background: none;
@@ -66,6 +121,9 @@ img.profile_pic {
     text-align: center;
     margin: auto;
 }
+
+
+/*greetings div settings*/
 
 #greetings {
     width: 40%;
@@ -78,12 +136,18 @@ img.profile_pic {
     padding: 20px 0px 20px 0px;
 }
 
+
+/*message div settings*/
+
 #message {
     font-family: montserrat_reg;
     line-height: 1.5;
     text-align: justify;
     padding: 0px 150px 0px 150px;
 }
+
+
+/*copyright settings*/
 
 #copyright {
     font-size: 9px;
@@ -92,11 +156,19 @@ img.profile_pic {
     text-align: center;
 }
 
+
+/*header image settings*/
+
 .boston_background {
     background: url("boston_background.jpg") top right no-repeat;
+    /*Source is watermarked on img*/
     background-size: cover;
     background-position: 100%;
-    /*padding-bottom: 75px;*/
+    padding-bottom: 75px;
+    position: relative;
+    min-height: 100%;
+    /*fill up the page*/
+    /*width: 100%;*/
 }
 
 

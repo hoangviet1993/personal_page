@@ -6,31 +6,34 @@
  *  updated by JMH on November 25, 2015 at 10:58 AM to add the blank tile
  *  updated by JMH on November 27, 2015 at 10:22 AM to add original-distribution
  */
-var ScrabbleTiles = [];
-ScrabbleTiles["a"] = { "value": 1, "original_distribution": 9, "number_remaining": 9 };
-ScrabbleTiles["b"] = { "value": 3, "original_distribution": 2, "number_remaining": 2 };
-ScrabbleTiles["c"] = { "value": 3, "original_distribution": 2, "number_remaining": 2 };
-ScrabbleTiles["d"] = { "value": 2, "original_distribution": 4, "number_remaining": 4 };
-ScrabbleTiles["e"] = { "value": 1, "original_distribution": 12, "number_remaining": 12 };
-ScrabbleTiles["f"] = { "value": 4, "original_distribution": 2, "number_remaining": 2 };
-ScrabbleTiles["g"] = { "value": 2, "original_distribution": 3, "number_remaining": 3 };
-ScrabbleTiles["h"] = { "value": 4, "original_distribution": 2, "number_remaining": 2 };
-ScrabbleTiles["i"] = { "value": 1, "original_distribution": 9, "number_remaining": 9 };
-ScrabbleTiles["j"] = { "value": 8, "original_distribution": 1, "number_remaining": 1 };
-ScrabbleTiles["k"] = { "value": 5, "original_distribution": 1, "number_remaining": 1 };
-ScrabbleTiles["l"] = { "value": 1, "original_distribution": 4, "number_remaining": 4 };
-ScrabbleTiles["m"] = { "value": 3, "original_distribution": 2, "number_remaining": 2 };
-ScrabbleTiles["n"] = { "value": 1, "original_distribution": 6, "number_remaining": 6 };
-ScrabbleTiles["o"] = { "value": 1, "original_distribution": 8, "number_remaining": 8 };
-ScrabbleTiles["p"] = { "value": 3, "original_distribution": 2, "number_remaining": 2 };
-ScrabbleTiles["q"] = { "value": 10, "original_distribution": 1, "number_remaining": 1 };
-ScrabbleTiles["r"] = { "value": 1, "original_distribution": 6, "number_remaining": 6 };
-ScrabbleTiles["s"] = { "value": 1, "original_distribution": 4, "number_remaining": 4 };
-ScrabbleTiles["t"] = { "value": 1, "original_distribution": 6, "number_remaining": 6 };
-ScrabbleTiles["u"] = { "value": 1, "original_distribution": 4, "number_remaining": 4 };
-ScrabbleTiles["v"] = { "value": 4, "original_distribution": 2, "number_remaining": 2 };
-ScrabbleTiles["w"] = { "value": 4, "original_distribution": 2, "number_remaining": 2 };
-ScrabbleTiles["x"] = { "value": 8, "original_distribution": 1, "number_remaining": 1 };
-ScrabbleTiles["y"] = { "value": 4, "original_distribution": 2, "number_remaining": 2 };
-ScrabbleTiles["z"] = { "value": 10, "original_distribution": 1, "number_remaining": 1 };
-ScrabbleTiles["_"] = { "value": 0, "original_distribution": 2, "number_remaining": 2 };
+function make_bags() {
+    // stuff the bag up with all the tiles and its data
+    ScrabbleTiles["a"] = { "value": 1, "original_distribution": 9, "number_remaining": 9 };
+    ScrabbleTiles["b"] = { "value": 3, "original_distribution": 2, "number_remaining": 2 };
+    ScrabbleTiles["c"] = { "value": 3, "original_distribution": 2, "number_remaining": 2 };
+    ScrabbleTiles["d"] = { "value": 2, "original_distribution": 4, "number_remaining": 4 };
+    ScrabbleTiles["e"] = { "value": 1, "original_distribution": 12, "number_remaining": 12 };
+    ScrabbleTiles["f"] = { "value": 4, "original_distribution": 2, "number_remaining": 2 };
+    ScrabbleTiles["g"] = { "value": 2, "original_distribution": 3, "number_remaining": 3 };
+    ScrabbleTiles["h"] = { "value": 4, "original_distribution": 2, "number_remaining": 2 };
+    ScrabbleTiles["i"] = { "value": 1, "original_distribution": 9, "number_remaining": 9 };
+    ScrabbleTiles["j"] = { "value": 8, "original_distribution": 1, "number_remaining": 1 };
+    ScrabbleTiles["k"] = { "value": 5, "original_distribution": 1, "number_remaining": 1 };
+    ScrabbleTiles["l"] = { "value": 1, "original_distribution": 4, "number_remaining": 4 };
+    ScrabbleTiles["m"] = { "value": 3, "original_distribution": 2, "number_remaining": 2 };
+    ScrabbleTiles["n"] = { "value": 1, "original_distribution": 6, "number_remaining": 6 };
+    ScrabbleTiles["o"] = { "value": 1, "original_distribution": 8, "number_remaining": 8 };
+    ScrabbleTiles["p"] = { "value": 3, "original_distribution": 2, "number_remaining": 2 };
+    ScrabbleTiles["q"] = { "value": 10, "original_distribution": 1, "number_remaining": 1 };
+    ScrabbleTiles["r"] = { "value": 1, "original_distribution": 6, "number_remaining": 6 };
+    ScrabbleTiles["s"] = { "value": 1, "original_distribution": 4, "number_remaining": 4 };
+    ScrabbleTiles["t"] = { "value": 1, "original_distribution": 6, "number_remaining": 6 };
+    ScrabbleTiles["u"] = { "value": 1, "original_distribution": 4, "number_remaining": 4 };
+    ScrabbleTiles["v"] = { "value": 4, "original_distribution": 2, "number_remaining": 2 };
+    ScrabbleTiles["w"] = { "value": 4, "original_distribution": 2, "number_remaining": 2 };
+    ScrabbleTiles["x"] = { "value": 8, "original_distribution": 1, "number_remaining": 1 };
+    ScrabbleTiles["y"] = { "value": 4, "original_distribution": 2, "number_remaining": 2 };
+    ScrabbleTiles["z"] = { "value": 10, "original_distribution": 1, "number_remaining": 1 };
+    ScrabbleTiles["_"] = { "value": 0, "original_distribution": 2, "number_remaining": 0 };
+}
+// currently , there is no flex tile

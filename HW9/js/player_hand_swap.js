@@ -49,28 +49,6 @@ function generate_player_hand(letters_drawn) {
         },
     });
 
-    // $("li").droppable({
-    //     tolerance: "touch",
-    //     accept: "li",
-    //     hoverClass: "ui-state-active",
-    //     drop: function(event, ui) {
-    //         var draggable = ui.draggable,
-    //             droppable = $(this);
-    //         //     dragPos = draggable.position(),
-    //         //     dropPos = droppable.position();
-    //         // draggable.css({
-    //         //     left: dropPos.left + 'px',
-    //         //     top: dropPos.top + 'px'
-    //         // });
-    //         // droppable.css({
-    //         //     left: dragPos.left + 'px',
-    //         //     top: dragPos.top + 'px'
-    //         // });
-    //         draggable.swap(droppable);
-    //     },
-    // });
-
-
     $("td").droppable({
         accept: "li",
         drop: function(event, ui) {

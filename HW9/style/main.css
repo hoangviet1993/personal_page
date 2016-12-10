@@ -67,10 +67,10 @@ li {
 
 /* error message box */
 
-#error_message {
+#text_box {
     background-color: hsla(17, 0%, 40%, 0.79);
     box-shadow: 0 0 3px 1px #000;
-    height: 80px;
+    height: 115px;
     text-align: center;
     left: 15px;
     padding: 15px;
@@ -78,6 +78,10 @@ li {
     width: 140px;
     margin: 10px 0px 10px 10px;
     float: left;
+    color: white;
+}
+
+#tile_removal {
     color: white;
 }
 
