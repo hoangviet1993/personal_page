@@ -15,10 +15,52 @@ $(document).ready(function() {
     generate_player_hand(letters_drawn, tile_class_array);
     make_return_droppable();
     make_shuffle_droppable();
+    $("#recall_tiles").attr('disabled', 'disabled');
+    $("#end_turn").attr('disabled', 'disabled');
+    $("#recall_tiles").click(function() {
+        // re-draw board
+        draw_board();
+        console.log("RECALL TILES: ");
+        // moving tiles from board back to rack
+        if (char_list.length < 8 && letters_drawn.length < 8) {
+            // need to deduce whether if there is space , if there is enough space
+            // iterate through all tiles on board
+            $("#error_message").html("Putting " + tile_class_array.length + " tiles back.");
+            for (var i = 0; i < tile_class_array.length; i++) {
+                if (char_list.indexOf(tile_class_array[i].id) == -1) {
+                    // only put back when unique
+                    char_list.push(tile_class_array[i].id);
+                    // put id back
+                    var new_div = $('<li id="' + tile_class_array[i].id + '"class="ui-state-default tile tile-' + tile_class_array[i].letter + '"></div>');
+                    if (letters_drawn.indexOf(new_div) == -1) {
+                        // only put back when unique
+                        letters_drawn.push(new_div);
+                    }
+                    // put li div back
+                    // remove tiles from board array
+                }
+            }
+            if (char_list.length == 7) {
+                // only when the rack is full
+                // reset the board array
+                tile_class_array = [];
+                tile_array = [];
+            } else {
+                console.log('there are tiles on the board still');
+            }
+        }
+        console.log(tile_array);
+        console.log(tile_class_array);
+        console.log(char_list);
+        generate_player_hand(letters_drawn);
+        $("#recall_tiles").attr('disabled', 'disabled');
+        $("#end_turn").attr('disabled', 'disabled');
+        // draw hands again
+    });
     $("#new_hand").click(function() {
         var current_no_of_tiles = char_list.length; // only exchange the current number of tiles on hand
         console.log("NEW HAND");
-        for (var i = 0; i < char_list.length; i++) {
+        for (var i = 0; i < current_no_of_tiles; i++) {
             var match = char_list[i].match(/(\w)\d*/);
             // console.log(char_list[i]);
             // console.log("Putting back: " + match[1]);
@@ -47,6 +89,8 @@ $(document).ready(function() {
         $("#error_message").html("Game Restarted");
         $("#tile_removed").html("");
         $("#score").html("Score: 0");
+        $("#recall_tiles").attr('disabled', 'disabled');
+        $("#end_turn").attr('disabled', 'disabled');
         // reset the entire game
         // refreshes all array
         // draw new hands as well refreshes the data structure of the bag
@@ -89,7 +133,11 @@ $(document).ready(function() {
             // console.log("AFTER updating score: ");
             // console.log(score)
             tile_class_array = [];
+            tile_array = [];
             // reset pending tile array
+            if (tile_class_array.length == 0 && tile_array == 0) {
+                $("#recall_tiles").attr('disabled', 'disabled');
+            }
             return;
         } else {
             $("#error_message").html("Cannot find the word: " + word);
@@ -160,6 +208,7 @@ function make_shuffle_droppable() {
     // draw 1 new tile and display it
     $("#shuffle_tile").droppable({
         drop: function(event, ui) {
+            $("#tile_removed").html("");
             var draggableID = ui.draggable.attr("id"); // a,b,c,c1
             ui.draggable.detach();
             var draggableClass = ui.draggable.attr("class"); // class of a b c tile
@@ -205,7 +254,11 @@ function make_shuffle_droppable() {
             draw_tiles(letters_drawn, parseInt(1));
             // draw all tiles again
             generate_player_hand(letters_drawn);
-            $("#error_message").html("Traded " + match[1] + " for " + char_list[char_list.length - 1]);
+            new_tile_match = char_list[char_list.length - 1].match(/(\w)\d*/);
+            $("#error_message").html("Traded " + match[1] + " for " + new_tile_match[1]);
+            if (tile_class_array.length == 0) {
+                $("#recall_tiles").attr('disabled', 'disabled');
+            }
         }
     });
 }
@@ -253,6 +306,9 @@ function make_return_droppable() {
             console.log(tile_class_array);
             console.log(tile_array);
             console.log(char_list);
+            if (tile_class_array.length == 0) {
+                $("#recall_tiles").attr('disabled', 'disabled');
+            }
         }
     });
 }
@@ -332,8 +388,8 @@ function join_word(tile_class_array, separator) {
     for (var i = 0; i < tile_class_array.length; i++) {
         word_array.push(tile_class_array[i].letter);
     }
-    console.log("word:");
-    console.log(word_array.join(separator));
+    // console.log("word:");
+    // console.log(word_array.join(separator));
     return (word_array.join(separator));
     // join all letter to get a string- the actual word
 }

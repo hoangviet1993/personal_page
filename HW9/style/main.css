@@ -72,12 +72,12 @@ li {
 #text_box {
     background-color: hsla(17, 0%, 40%, 0.79);
     box-shadow: 0 0 3px 1px #000;
-    height: 115px;
+    height: 95px;
     text-align: center;
     left: 15px;
     padding: 15px;
     top: 15px;
-    width: 140px;
+    width: 190px;
     margin: 10px 0px 10px 10px;
     float: left;
     color: white;
@@ -85,6 +85,21 @@ li {
 
 #tile_removal {
     color: white;
+}
+
+
+/* Location for the menu and score UI components. */
+
+#pane-l {
+    background-color: hsla(17, 0%, 40%, 0.79);
+    box-shadow: 0 0 3px 1px #000;
+    height: inherit;
+    left: 15px;
+    padding: 15px;
+    top: 15px;
+    width: 190px;
+    margin: 10px 10px 10px 10px;
+    float: left;
 }
 
 
@@ -97,7 +112,7 @@ li {
     border-radius: 5px;
     box-shadow: 0 5px 20px 0 #000000;
     min-height: 750px;
-    width: 950px;
+    width: 980px;
 }
 
 
@@ -148,21 +163,6 @@ li {
 }
 
 
-/* Location for the menu and score UI components. */
-
-#pane-l {
-    background-color: hsla(17, 0%, 40%, 0.79);
-    box-shadow: 0 0 3px 1px #000;
-    height: inherit;
-    left: 15px;
-    padding: 15px;
-    top: 15px;
-    width: 140px;
-    margin: 10px 0px 10px 10px;
-    float: left;
-}
-
-
 /* all input button */
 
 input[type=submit] {
@@ -171,12 +171,14 @@ input[type=submit] {
     border: 1px solid#d2d7dc;
     background-color: rgba(255, 255, 255, 1);
     border-radius: .50em;
-    padding: 20px;
+    /*padding: 5px;*/
     cursor: pointer;
-    width: 120px;
-    font-size: 14px;
-    margin: 10px;
+    width: 85px;
+    font-size: 12px;
+    margin: 10px 5px 5px 5px;
     display: block;
+    float: left;
+    height: 40px;
 }
 
 

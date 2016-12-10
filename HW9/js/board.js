@@ -90,6 +90,8 @@ function make_td_droppable() {
             var droppableClass = $(this).attr("class"); // class of the tile (double_word tile tile-a col-n row-n)
             var $this = $(this);
             $("#end_turn").removeAttr('disabled'); // re-enable end turn button ONLY when a new tile has been added
+            $("#recall_tiles").removeAttr('disabled');// a tile is on the board, can return em
+
             // console.log("match[1]" + match[1]);
             var match;
             //  console.log("length of char list after a tile has been moved" + char_list.length);
@@ -202,7 +204,7 @@ function display_word_and_add_score(tile_class_array, score) {
     $("#score").html("Score: " + score);
     $("#error_message").html("Found: \n" + word);
 
-    $("#tile_removed").html("Tile(s) " + join_word(tile_class_array, ", ") + " permanently removed." + "<br/>" + "Adding " + parseInt(tile_class_array.length) + " tiles to your hand!");
+    $("#tile_removed").html("Tile(s) " + join_word(tile_class_array, ", ") + "<br/>" + " permanently removed." + "<br/>" + "Added " + parseInt(tile_class_array.length) + " tiles");
     console.log("AFTER updating score: ");
     console.log(score)
         // update error message to be the found word
