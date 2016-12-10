@@ -16,3 +16,4 @@ var permanent_tile_array = []; // permanently placed tile TBD
 var number_of_round = 0; // TBD
 var letters_drawn = []; // new div drawn for each tile
 var score = 0;
+var counter = 1;

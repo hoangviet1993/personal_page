@@ -18,7 +18,6 @@ jQuery.fn.swap = function(b) {
 };
 
 function draw_tiles(letters_drawn, num) {
-    var counter = 0;
     var new_div;
     for (var i = 0; i < num; i++) {
         var rand_int = getRandomInt(0, 26);
@@ -35,17 +34,23 @@ function draw_tiles(letters_drawn, num) {
         } while (ScrabbleTiles[chr].number_remaining === 0);
         ScrabbleTiles[chr].number_remaining--;
         // reduce the no of remaining letter
-        if (char_list.indexOf(chr) == -1) {
+        if (char_list.indexOf(chr) == -1 && tile_array.indexOf(chr) == -1) {
+            // has to not be both in the hand or the board
             // console.log("new chr found");
             // if all unique char
             // add id to li
             new_div = $('<li id="' + chr + '"class="ui-state-default tile tile-' + chr + '"></div>');
             char_list.push(chr);
-        } else {
+        } // numbered - tiles exist on board but not on rack 
+        else {
             // if char already in list, add number to id
             // console.log('found repeated chr');
-            new_div = $('<li id="' + chr + ++counter + '"class="ui-state-default tile tile-' + chr + '"></div>');
+            new_div = $('<li id="' + chr + counter + '"class="ui-state-default tile tile-' + chr + '"></div>');
             char_list.push(chr + counter);
+            counter++;
+            //a global counter means that every char that is found to be existed
+            // will have a unique ID that increments by 1 every time any duplicated letter
+            // is detected
         }
         letters_drawn.push(new_div);
         // push new_div to array to store 
