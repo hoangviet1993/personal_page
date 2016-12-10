@@ -96,7 +96,7 @@ img.profile_pic {
     background: url("boston_background.jpg") top right no-repeat;
     background-size: cover;
     background-position: 100%;
-    padding-bottom: 75px;
+    /*padding-bottom: 75px;*/
 }
 
 
