@@ -22,7 +22,7 @@ $(function() {
     //enable JQUERY UI interface
     create_tabs();
     //create tabs if user hit save button
-
+    
     /*Assignment 7 */
     // got rid of a few validator method since logic improved
     //customized method for detecting float number
@@ -199,16 +199,15 @@ function slider() {
  */
 /*Learnt from https://jsfiddle.net/EKBqy/ */
 function create_tabs() {
+    /*http://jqueryui.com/tabs/#manipulation */
     $("#deleteTabs").click(function() {
         //delete all tab button,including the input form, all current drawn table and input
         var tabCount = $("#tabs li").length;
-        if (tabCount > 1) {
-            $("#tab-" + 1).remove();
-        }
-        //ran out of time to figure out how to delete just the dynamically created tabs
-        // cannot get a hold of dynamically created tab before DOM registers
+        //console.log("tabCount is " + tabCount);
+        do {
+            $("#child_tab").remove();
+        } while ($("#tabs li").length > 1);
     });
-    /*http://jqueryui.com/tabs/#manipulation */
     $("#addTab").click(function() {
         // only if valid form, then create a new tab
         if ($("form#input_form").valid() == true) {
@@ -220,10 +219,10 @@ function create_tabs() {
             var num_tabs = $('div#tabs ul li.tab').length + 1;
             //appending list item with title name
             $('ul').append(
-                '<li class="tab"><a href="#tab-' + num_tabs + '">[' + row_start + ',' + row_finish + ']' + '[' + col_start + ',' + col_finish + ']' + '</a>' + "<span class='ui-icon ui-icon-close' role='presentation'></span>" + '</li>');
+                '<li id ="child_tab" class="tab"><a href="#tab-' + num_tabs + '">[' + row_start + ',' + row_finish + ']' + '[' + col_start + ',' + col_finish + ']' + '</a>' + "<span class='ui-icon ui-icon-close' role='presentation'></span>" + '</li>');
             //appending the actual tab and the table
             $('#tabs').append(
-                '<div id="tab-' + num_tabs + '">' + $("#tableout").html() + '</div>');
+                '<div>' + $("#tableout").html() + '</div>');
             $('#tabs').tabs("refresh");
             // Close icon: removing the tab on click
             $('#tabs').on("click", "span.ui-icon-close", function() {
