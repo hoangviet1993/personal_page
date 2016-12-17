@@ -83,21 +83,19 @@ function make_td_droppable() {
         tolerance: "pointer",
         accept: ".tile",
         drop: function(event, ui) {
-            $("#tile_removed").html("");
             var draggableID = ui.draggable.attr("id"); // a,b,c
             var draggableClass = ui.draggable.attr("class"); // class of a b c tiles
             var droppableID = $(this).attr("id"); // id of the tile (dropped)
             var droppableClass = $(this).attr("class"); // class of the tile (double_word tile tile-a col-n row-n)
             var $this = $(this);
             $("#end_turn").removeAttr('disabled'); // re-enable end turn button ONLY when a new tile has been added
-            $("#recall_tiles").removeAttr('disabled');// a tile is on the board, can return em
-
+            $("#recall_tiles").removeAttr('disabled'); // a tile is on the board, can return em
+            $("#tile_removed").html(""); // remove msg on new action
             // console.log("match[1]" + match[1]);
             var match;
             //  console.log("length of char list after a tile has been moved" + char_list.length);
-            if (droppableID === undefined) {
+            if (droppableID != "dropped" && droppableID != "permanent") {
                 // still can put stuff if, no dropped id yet
-                $(this).attr("id", "dropped");
                 // add dropped to td
                 ui.draggable.detach().appendTo($(this));
                 // detach element from rack and add to board
@@ -132,26 +130,25 @@ function make_td_droppable() {
                     obj.value = parseInt(ScrabbleTiles[obj.letter].value);
                     tile_array.push(draggableID); // get id of tile(a,b,c)
                     tile_class_array.push(obj); // put the obj into array to store 
-                    console.log(tile_class_array);
-                    console.log(tile_array);
                     //for (var i = 0; i < tile_class_array.length; i++) {
                     $("#error_message").html("Tile " + obj.letter + " added");
                     //}
                     console.log("ADDING NEW TILE: " + draggableID);
-                    console.log(char_list);
-
+                    print_all_arrays();
                 } else {
                     // tile is already in, but dropped to a different location
                     // console.log("BEFORE UPDATE");
                     // console.log(tile_class_array);
                     update_location_of_tiles(droppableClass, draggableID, tile_class_array);
-                    console.log("UPDATING TILE: " + draggableID);;
-                    console.log(tile_class_array);
-                    //for (var i = 0; i < tile_class_array.length; i++) {
+                    console.log("UPDATING TILE: " + draggableID);
+                    print_all_arrays();
                     match = draggableClass.match(/.*\stile-(\w).*/); // just grabbing the letter (tile-w) -> w
                     $("#error_message").html("Tile " + match[1] + " relocated");
-                    //}
-                    console.log(char_list);
+                }
+                if (droppableID === undefined) {
+                    $(this).attr("id", "dropped");
+                    console.log("TD NEW ID: ");
+                    console.log("ADDING " + $(this).attr("id") + " TO " + $(this).attr("class"));
                 }
                 // $("#" + draggableID).droppable('disable');
             } else {
@@ -194,8 +191,6 @@ function update_location_of_tiles(droppableClass, draggableID, tile_class_array)
 function display_word_and_add_score(tile_class_array, score) {
     var word = join_word(tile_class_array, "");
     //console.log("found " + word);
-    console.log("BEFORE updating score: ");
-    console.log(score)
     if (tile_class_array.length > 0) {
         var new_score = calculate_score(tile_class_array);
         score += new_score;
@@ -203,20 +198,16 @@ function display_word_and_add_score(tile_class_array, score) {
     // calculate score and update score
     $("#score").html("Score: " + score);
     $("#error_message").html("Found: \n" + word);
-
     $("#tile_removed").html("Tile(s) " + join_word(tile_class_array, ", ") + "<br/>" + " permanently removed." + "<br/>" + "Added " + parseInt(tile_class_array.length) + " tiles");
-    console.log("AFTER updating score: ");
-    console.log(score)
-        // update error message to be the found word
-        // for (var i = 0; i < tile_class_array.length; i++) {
-        //     $("#" + tile_class_array[i].id).draggable("disable");
-        // }
-        //removing all draggable tiles once word is confirmed
+    // update error message to be the found word
+    // for (var i = 0; i < tile_class_array.length; i++) {
+    //     $("#" + tile_class_array[i].id).draggable("disable");
+    // }
+    //removing all draggable tiles once word is confirmed
     number_of_round++;
     // add round number
     completed_word.push(word);
     // add word to completed word list
-
     // get total number of tile up to 7 again
     for (var i = 0; i < tile_class_array.length; i++) {
         permanent_tile_array.push(tile_class_array[i]);
@@ -224,6 +215,19 @@ function display_word_and_add_score(tile_class_array, score) {
         // transfer all the pending tiles on to a permanent array
     }
     $("#end_turn").attr('disabled', 'disabled');
+    // console.log("DISPLAYING SCORE");
+    // print_all_arrays();
     // disabling the button after sucessfully found the word in the dictionary
     return score;
+}
+
+function make_tiles_and_cell_permanent(tile_array) {
+    // console.log("MAKING TILES PERM:");
+    // print_all_arrays();
+    for (var i = 0; i < tile_array.length; i++) {
+        $("#" + tile_array[i]).draggable('disable');
+        var dropped_td = document.getElementById("dropped");
+        dropped_td.id = "permanent";
+    }
+
 }
