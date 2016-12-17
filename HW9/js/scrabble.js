@@ -90,6 +90,7 @@ function make_shuffle_droppable() {
             $("#error_message").html("Traded " + match[1] + " for " + new_tile_match[1]);
             if (tile_class_array.length == 0) {
                 $("#recall_tiles").attr('disabled', 'disabled');
+                $("#end_turn").attr('disabled', 'disabled');
             }
         }
     });
@@ -138,6 +139,7 @@ function make_return_droppable() {
             print_all_arrays();
             if (tile_class_array.length == 0) {
                 $("#recall_tiles").attr('disabled', 'disabled');
+                $("#end_turn").attr('disabled', 'disabled');
             }
         }
     });

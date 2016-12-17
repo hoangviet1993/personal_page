@@ -130,11 +130,12 @@ function make_end_turn_button() {
             tile_array.splice(0);
             // console.log("AFTER reset arrays ");
             // reset pending tile array
-            if (tile_class_array.length == 0 && tile_array == 0) {
-                $("#recall_tiles").attr('disabled', 'disabled');
-            }
             console.log("END TURN: SUCCESS");
             print_all_arrays();
+            if (tile_class_array.length == 0 && tile_array == 0) {
+                $("#recall_tiles").attr('disabled', 'disabled');
+                $("#end_turn").attr('disabled', 'disabled');
+            }
             return;
         } else {
             console.log("END TURN: cannot find word");

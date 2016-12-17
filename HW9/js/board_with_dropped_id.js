@@ -85,7 +85,7 @@ function make_td_droppable() {
         drop: function(event, ui) {
             var draggableID = ui.draggable.attr("id"); // a,b,c
             var draggableClass = ui.draggable.attr("class"); // class of a b c tiles
-            var droppableID = $(this).attr("id"); // id of the tile (none yet)
+            var droppableID = $(this).attr("id"); // id of the tile (dropped)
             var droppableClass = $(this).attr("class"); // class of the tile (double_word tile tile-a col-n row-n)
             var $this = $(this);
             $("#end_turn").removeAttr('disabled'); // re-enable end turn button ONLY when a new tile has been added
@@ -96,7 +96,7 @@ function make_td_droppable() {
             //  console.log("length of char list after a tile has been moved" + char_list.length);
             if ($(this).children(".tile").length == 0) {
                 // still can put stuff in if, no child yet
-                // add child to it, now it can no longer accept any tile
+                // add dropped to td
                 ui.draggable.detach().appendTo($(this));
                 // detach element from rack and add to board
                 // match = draggableClass.match(/.*\stile-(\w).*/);
@@ -145,14 +145,30 @@ function make_td_droppable() {
                     match = draggableClass.match(/.*\stile-(\w).*/); // just grabbing the letter (tile-w) -> w
                     $("#error_message").html("Tile " + match[1] + " relocated");
                 }
+
+
                 // $("#" + draggableID).droppable('disable');
             } else {
                 console.log("cell is already full");
                 // already has a tile in it
                 ui.draggable.draggable('option', 'revert', true);
+
                 // return tile back to where it came from
             }
+            // if (droppableID === undefined) {
+            //     $(this).attr("id", "dropped");
+            //     console.log("TD NEW ID: ");
+            //     console.log("ADDING " + $(this).attr("id") + " TO " + $(this).attr("class"));
+            // }
+            return;
         },
+        // out: function(event, ui) {
+        //     // moving a tile from one cell to another
+        //     // should remove previous tile from tile array
+        //     var draggableID = ui.draggable.attr("id");
+        //     $(this).removeAttr('id');
+        //     // strip the dropped id tag to make it avaialble to accept new tile again
+        // }
     });
 }
 
