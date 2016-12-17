@@ -8,7 +8,6 @@ function make_recall_tiles_button() {
             $("#error_message").html("Putting " + tile_class_array.length + " tiles back.");
             for (var i = 0; i < tile_class_array.length; i++) {
                 if (char_list.indexOf(tile_class_array[i].id) == -1) {
-                    document.getElementById("dropped").removeAttribute("id");
                     // only put back when unique
                     document.getElementById(tile_class_array[i].id).remove();
                     char_list.push(tile_class_array[i].id);
@@ -33,8 +32,8 @@ function make_recall_tiles_button() {
                 console.log('there are tiles on the board still');
             }
         }
-        generate_player_hand(letters_drawn);
         print_all_arrays();
+        generate_player_hand(letters_drawn);
         $("#recall_tiles").attr('disabled', 'disabled');
         $("#end_turn").attr('disabled', 'disabled');
         // draw hands again
