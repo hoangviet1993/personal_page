@@ -13,6 +13,7 @@ required(empty input),integer check,range check and number check
 */
 // learnt a lot from
 // https://www.sitepoint.com/basic-jquery-form-validation-tutorial/
+
 $(function() {
     /*Assignment 8 */
     slider();
@@ -22,7 +23,7 @@ $(function() {
     //enable JQUERY UI interface
     create_tabs();
     //create tabs if user hit save button
-    
+
     /*Assignment 7 */
     // got rid of a few validator method since logic improved
     //customized method for detecting float number
@@ -202,27 +203,30 @@ function create_tabs() {
     /*http://jqueryui.com/tabs/#manipulation */
     $("#deleteTabs").click(function() {
         //delete all tab button,including the input form, all current drawn table and input
-        var tabCount = $("#tabs li").length;
+        var num_tabs = $('div#tabs ul li.tab').length;
+        console.log("DELETE before: num_tabs = " + num_tabs);
         //console.log("tabCount is " + tabCount);
         do {
             $("#child_tab").remove();
+            $("#tab-" + num_tabs--).remove();
         } while ($("#tabs li").length > 1);
     });
     $("#addTab").click(function() {
         // only if valid form, then create a new tab
-        if ($("form#input_form").valid() == true) {
+        if ($("form#input_form").valid() === true) {
+            var num_tabs = $('div#tabs ul li.tab').length + 1;
             var row_start = Number(document.getElementById('row_start').value);
             var row_finish = Number(document.getElementById('row_end').value);
             var col_start = Number(document.getElementById('col_start').value);
             var col_finish = Number(document.getElementById('col_end').value);
             //get all variables to make tab header
-            var num_tabs = $('div#tabs ul li.tab').length + 1;
+            console.log("ADD : num_tabs = " + num_tabs);
             //appending list item with title name
             $('ul').append(
                 '<li id ="child_tab" class="tab"><a href="#tab-' + num_tabs + '">[' + row_start + ',' + row_finish + ']' + '[' + col_start + ',' + col_finish + ']' + '</a>' + "<span class='ui-icon ui-icon-close' role='presentation'></span>" + '</li>');
             //appending the actual tab and the table
             $('#tabs').append(
-                '<div>' + $("#tableout").html() + '</div>');
+                '<div id ="tab-' + num_tabs + '">' + $("#tableout").html() + '</div>');
             $('#tabs').tabs("refresh");
             // Close icon: removing the tab on click
             $('#tabs').on("click", "span.ui-icon-close", function() {
@@ -365,5 +369,6 @@ function generateTable() {
     }
     table += '</table>'; // close out table tag
     // console.log(table);
+    document.getElementById('tableout').innerHTML = "";
     document.getElementById('tableout').innerHTML = table; // push table content into element
 }
